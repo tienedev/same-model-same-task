@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-05-10T14:41:55.752862+00:00",
+    "generated_at": "2026-05-10T22:20:08.039885+00:00",
     "n_frameworks": 8,
     "pricing_usd_per_m_tokens": {
       "in_per_m": 2.0,
@@ -23,7 +23,13 @@
       "estimated_cost_usd_per_run": 0.020239565217391304,
       "hit_step_limit_rate": 0.0,
       "mean_judge_score": 13.652173913043478,
-      "judge_n": 23
+      "judge_n": 23,
+      "mean_justification_quality": 3.0869565217391304,
+      "mean_ndcg_at_3": null,
+      "hit_at_1_rate": null,
+      "mean_precision_at_3": null,
+      "mean_recall_at_3": null,
+      "n_scored": 0
     },
     {
       "framework": "baseline-typescript",
@@ -40,7 +46,13 @@
       "estimated_cost_usd_per_run": 0.017743931034482758,
       "hit_step_limit_rate": 0.0,
       "mean_judge_score": 13.413793103448276,
-      "judge_n": 29
+      "judge_n": 29,
+      "mean_justification_quality": 3,
+      "mean_ndcg_at_3": null,
+      "hit_at_1_rate": null,
+      "mean_precision_at_3": null,
+      "mean_recall_at_3": null,
+      "n_scored": 0
     },
     {
       "framework": "crewai",
@@ -57,7 +69,13 @@
       "estimated_cost_usd_per_run": 0.10724638461538462,
       "hit_step_limit_rate": 0.0,
       "mean_judge_score": 13.807692307692308,
-      "judge_n": 26
+      "judge_n": 26,
+      "mean_justification_quality": 3.269230769230769,
+      "mean_ndcg_at_3": null,
+      "hit_at_1_rate": null,
+      "mean_precision_at_3": null,
+      "mean_recall_at_3": null,
+      "n_scored": 0
     },
     {
       "framework": "google-adk",
@@ -74,7 +92,13 @@
       "estimated_cost_usd_per_run": 0.018387103448275863,
       "hit_step_limit_rate": 0.0,
       "mean_judge_score": 15.03448275862069,
-      "judge_n": 29
+      "judge_n": 29,
+      "mean_justification_quality": 3.413793103448276,
+      "mean_ndcg_at_3": null,
+      "hit_at_1_rate": null,
+      "mean_precision_at_3": null,
+      "mean_recall_at_3": null,
+      "n_scored": 0
     },
     {
       "framework": "langgraph",
@@ -91,7 +115,13 @@
       "estimated_cost_usd_per_run": 0.01637051851851852,
       "hit_step_limit_rate": 0.0,
       "mean_judge_score": 15.592592592592593,
-      "judge_n": 27
+      "judge_n": 27,
+      "mean_justification_quality": 3.7037037037037037,
+      "mean_ndcg_at_3": null,
+      "hit_at_1_rate": null,
+      "mean_precision_at_3": null,
+      "mean_recall_at_3": null,
+      "n_scored": 0
     },
     {
       "framework": "mastra",
@@ -108,7 +138,13 @@
       "estimated_cost_usd_per_run": 0.018895533333333332,
       "hit_step_limit_rate": 0.0,
       "mean_judge_score": 13.966666666666667,
-      "judge_n": 30
+      "judge_n": 30,
+      "mean_justification_quality": 3.3666666666666667,
+      "mean_ndcg_at_3": null,
+      "hit_at_1_rate": null,
+      "mean_precision_at_3": null,
+      "mean_recall_at_3": null,
+      "n_scored": 0
     },
     {
       "framework": "pydantic-ai",
@@ -125,7 +161,13 @@
       "estimated_cost_usd_per_run": 0.01806213793103448,
       "hit_step_limit_rate": 0.0,
       "mean_judge_score": 15.310344827586206,
-      "judge_n": 29
+      "judge_n": 29,
+      "mean_justification_quality": 3.413793103448276,
+      "mean_ndcg_at_3": null,
+      "hit_at_1_rate": null,
+      "mean_precision_at_3": null,
+      "mean_recall_at_3": null,
+      "n_scored": 0
     },
     {
       "framework": "vercel-ai-sdk",
@@ -142,7 +184,13 @@
       "estimated_cost_usd_per_run": 0.005951407407407407,
       "hit_step_limit_rate": 0.0,
       "mean_judge_score": 13.074074074074074,
-      "judge_n": 27
+      "judge_n": 27,
+      "mean_justification_quality": 2.888888888888889,
+      "mean_ndcg_at_3": null,
+      "hit_at_1_rate": null,
+      "mean_precision_at_3": null,
+      "mean_recall_at_3": null,
+      "n_scored": 0
     }
   ],
   "per_job_success": [

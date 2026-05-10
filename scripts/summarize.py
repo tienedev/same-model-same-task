@@ -80,7 +80,8 @@ def compute_stats(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
             # parseable rubric (relevance + score_coherence + justification_quality
             # + format, each 1-5, sum 4-20). Errors and `skipped` runs are
             # ignored — leaves judge_n=0 cleanly when the judge hasn't run.
-            judge_totals: list[int] = []
+            judge_totals: list[int] = []           # legacy /20 — preserved in JSON only
+            justif_qualities: list[int] = []       # new headline secondary signal
             for r in valid:
                 j = r.get("judgment")
                 if not j or j.get("skipped") or j.get("error"):
@@ -92,9 +93,13 @@ def compute_stats(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
                         + int(j["justification_quality"])
                         + int(j["format"])
                     )
+                    justif_qualities.append(int(j["justification_quality"]))
                 except (KeyError, TypeError, ValueError):
                     continue
             mean_judge_score = statistics.mean(judge_totals) if judge_totals else None
+            mean_justification_quality = (
+                statistics.mean(justif_qualities) if justif_qualities else None
+            )
             judge_n = len(judge_totals)
 
             # Deterministic scores: only counted for runs with a non-skipped
@@ -134,6 +139,7 @@ def compute_stats(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 ),
                 "mean_judge_score": mean_judge_score,
                 "judge_n": judge_n,
+                "mean_justification_quality": mean_justification_quality,
                 "mean_ndcg_at_3": mean_ndcg_at_3,
                 "hit_at_1_rate": hit_at_1_rate,
                 "mean_precision_at_3": mean_precision_at_3,
@@ -153,6 +159,7 @@ def compute_stats(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "hit_step_limit_rate": None,
                 "mean_judge_score": None,
                 "judge_n": 0,
+                "mean_justification_quality": None,
                 "mean_ndcg_at_3": None,
                 "hit_at_1_rate": None,
                 "mean_precision_at_3": None,
@@ -248,10 +255,15 @@ def write_summary_md(stats: list[dict[str, Any]], out: Path) -> None:
 
 
 def _build_leaderboard_md(stats: list[dict[str, Any]]) -> str:
-    """Build the Markdown leaderboard table. Reused by README injection (Task 5)."""
+    """Build the Markdown leaderboard table. Reused by README injection.
+
+    Headline columns: NDCG@3 (mean), Hit@1 (rate).
+    JustifQ /5 is shown as a secondary signal with a footnote on self-bias —
+    see the README "Scoring" section for the rationale on demoting the old /20.
+    """
     rows = [
-        "| Framework | Valid | Judge /20 | p50 (s) | p95 (s) | Mean tokens (in/out) | Mean tools | Cost / run (USD) |",
-        "|---|---|---|---|---|---|---|---|",
+        "| Framework | Valid | NDCG@3 | Hit@1 | JustifQ /5 [^j] | p50 (s) | p95 (s) | Mean tokens (in/out) | Mean tools | Cost / run (USD) |",
+        "|---|---|---|---|---|---|---|---|---|---|",
     ]
     for s in stats:
         if s["mean_input_tokens"] is None or s["mean_output_tokens"] is None:
@@ -263,15 +275,29 @@ def _build_leaderboard_md(stats: list[dict[str, Any]]) -> str:
             if s["estimated_cost_usd_per_run"] is None
             else f"${s['estimated_cost_usd_per_run']:.4f}"
         )
-        judge_cell = _fmt_or_dash(s.get("mean_judge_score"), ".2f")
+        ndcg_cell = _fmt_or_dash(s.get("mean_ndcg_at_3"), ".3f")
+        hit_cell = (
+            "—"
+            if s.get("hit_at_1_rate") is None
+            else f"{s['hit_at_1_rate'] * 100:.1f}%"
+        )
+        justifq_cell = _fmt_or_dash(s.get("mean_justification_quality"), ".2f")
         rows.append(
             f"| {s['framework']} | {s['count_valid']}/{s['count_total']} "
-            f"| {judge_cell} "
+            f"| {ndcg_cell} | {hit_cell} | {justifq_cell} "
             f"| {_fmt_or_dash(s['latency_p50'])} | {_fmt_or_dash(s['latency_p95'])} "
             f"| {tokens_cell} "
             f"| {_fmt_or_dash(s['mean_tool_calls'])} "
             f"| {cost_cell} |"
         )
+    rows.append("")
+    rows.append(
+        "[^j]: `JustifQ /5` is the LLM-judge's `justification_quality` axis only — "
+        "the prose readability signal. The previous `/20` sum is preserved in the JSON "
+        "but no longer surfaced: Gemini judging Gemini exhibits documented self-bias "
+        "(up to 50% rubric-flip on objective rubrics; Panickssery et al. NeurIPS 2024). "
+        "Use NDCG@3 + Hit@1 for ranking decisions."
+    )
     return "\n".join(rows) + "\n"
 
 

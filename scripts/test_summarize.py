@@ -191,3 +191,59 @@ class TestDeterministicAggregation:
         assert s["mean_ndcg_at_3"] is None
         assert s["hit_at_1_rate"] is None
         assert s["n_scored"] == 0
+
+
+class TestLeaderboardColumns:
+    def test_headline_columns_present(self, tmp_path):
+        from scripts.summarize import compute_stats, write_summary_md
+        runs = [
+            {"framework": "fwY", "valid": True, "elapsed_s": 1.0,
+             "input_tokens": 100, "output_tokens": 50, "tool_calls": 3,
+             "deterministic_score": {
+                 "ndcg_at_3": 0.85, "hit_at_1": True,
+                 "precision_at_3": 1.0, "recall_at_3": 1.0,
+                 "invalid_id_in_ranked": False,
+                 "agent_top_3": [], "gold_top_3": [],
+             },
+             "judgment": {
+                 "relevance": 4, "score_coherence": 4,
+                 "justification_quality": 5, "format": 5,
+             }},
+        ]
+        out = tmp_path / "summary.md"
+        write_summary_md(compute_stats(runs), out)
+        text = out.read_text(encoding="utf-8")
+        # New headline columns
+        assert "NDCG@3" in text
+        assert "Hit@1" in text
+        # Legacy column kept but narrowed
+        assert "JustifQ /5" in text
+        # The old "Judge /20" total column is removed from the rendered table
+        assert "Judge /20" not in text
+
+    def test_justifq_renders_only_justification_quality(self, tmp_path):
+        """JustifQ /5 must come from judgment.justification_quality only."""
+        from scripts.summarize import compute_stats, write_summary_md
+        runs = [
+            {"framework": "fwZ", "valid": True, "elapsed_s": 1.0,
+             "input_tokens": 100, "output_tokens": 50, "tool_calls": 3,
+             "deterministic_score": {
+                 "ndcg_at_3": 0.9, "hit_at_1": True,
+                 "precision_at_3": 1.0, "recall_at_3": 1.0,
+                 "invalid_id_in_ranked": False,
+                 "agent_top_3": [], "gold_top_3": [],
+             },
+             "judgment": {
+                 "relevance": 1, "score_coherence": 1,
+                 "justification_quality": 5, "format": 1,
+             }},
+        ]
+        out = tmp_path / "summary.md"
+        write_summary_md(compute_stats(runs), out)
+        text = out.read_text(encoding="utf-8")
+        # justification_quality=5 → JustifQ cell shows "5.00"
+        assert "5.00" in text
+        # Crucially, the /20 sum (which would be 8) must NOT appear
+        # in the fwZ row
+        fwz_line = [l for l in text.splitlines() if "fwZ" in l][0]
+        assert "8" not in fwz_line.split("|")[3]  # 3rd visible cell is the score
