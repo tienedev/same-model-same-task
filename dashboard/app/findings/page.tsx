@@ -216,11 +216,10 @@ export default function FindingsPage() {
           <Callout title="Patterns worth reading the table for">
             <ul className="list-disc space-y-1 pl-5">
               <li>
-                <strong>Vercel AI SDK fails 0/3 on the DevOps / SRE remote
-                role</strong> — the only red cell in its row, despite 100% on
-                everything else. A specific class of input (long location string
-                + many remote-related keywords) defeats its lean context
-                handling.
+                <strong>Vercel AI SDK fails 0/3 on the DevOps / SRE job</strong>
+                {" "}— the only red cell in its row, despite 100% on everything
+                else. A specific class of input (long location string + many
+                remote-related keywords) defeats its lean context handling.
               </li>
               <li>
                 <strong>Baseline-python flakes on jobs 002, 003, 005, 006</strong>
