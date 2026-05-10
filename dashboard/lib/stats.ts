@@ -16,6 +16,12 @@ export interface FrameworkStats {
   hit_step_limit_rate: number | null;
   mean_judge_score: number | null;
   judge_n: number;
+  mean_ndcg_at_3: number | null;
+  hit_at_1_rate: number | null;
+  mean_precision_at_3: number | null;
+  mean_recall_at_3: number | null;
+  n_scored: number;
+  mean_justification_quality: number | null;
 }
 
 export interface PerJobSuccess {

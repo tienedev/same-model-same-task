@@ -77,8 +77,8 @@ export default function Home() {
       <section className="space-y-4 pt-12">
         <SectionHeader
           eyebrow="Leaderboard"
-          title="Frameworks ranked by judge score"
-          description={`Higher is better. Frameworks with no valid runs sort last. Pricing: $${summary.metadata.pricing_usd_per_m_tokens.in_per_m}/M input · $${summary.metadata.pricing_usd_per_m_tokens.out_per_m}/M output tokens.`}
+          title="Frameworks ranked by NDCG@3"
+          description={`Higher is better. NDCG@3 is a deterministic IR scorer over graded relevance (range 0–1). Frameworks with no valid runs sort last. Pricing: $${summary.metadata.pricing_usd_per_m_tokens.in_per_m}/M input · $${summary.metadata.pricing_usd_per_m_tokens.out_per_m}/M output tokens.`}
         />
         <Leaderboard stats={summary.frameworks} />
       </section>
@@ -93,9 +93,9 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-2">
           <Card className="rounded-xl">
             <CardHeader>
-              <CardTitle>Cost vs Judge score</CardTitle>
+              <CardTitle>Cost vs NDCG@3</CardTitle>
               <p className="text-xs text-muted-foreground">
-                Upper-left is better — higher quality per dollar spent.
+                Upper-left is better — higher NDCG@3 per dollar spent.
               </p>
             </CardHeader>
             <CardContent className="pb-4">

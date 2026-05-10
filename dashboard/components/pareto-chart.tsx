@@ -45,7 +45,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: PointP
         Cost: <span className="font-mono text-foreground">${p.cost.toFixed(4)}</span>
       </div>
       <div className="text-muted-foreground">
-        Quality: <span className="font-mono text-foreground">{p.quality.toFixed(2)}/20</span>
+        NDCG@3: <span className="font-mono text-foreground">{p.quality.toFixed(3)}</span>
       </div>
     </div>
   );
@@ -55,12 +55,12 @@ export function ParetoChart({ stats }: { stats: FrameworkStats[] }) {
   const data: Point[] = stats
     .filter(
       (s) =>
-        s.estimated_cost_usd_per_run !== null && s.mean_judge_score !== null,
+        s.estimated_cost_usd_per_run !== null && s.mean_ndcg_at_3 !== null,
     )
     .map((s) => ({
       framework: s.framework,
       cost: s.estimated_cost_usd_per_run as number,
-      quality: s.mean_judge_score as number,
+      quality: s.mean_ndcg_at_3 as number,
     }));
 
   return (
@@ -79,9 +79,9 @@ export function ParetoChart({ stats }: { stats: FrameworkStats[] }) {
           <YAxis
             type="number"
             dataKey="quality"
-            name="Judge score (/20)"
-            domain={[10, 18]}
-            tickFormatter={(v: number) => v.toFixed(0)}
+            name="NDCG@3"
+            domain={[0, 1]}
+            tickFormatter={(v: number) => v.toFixed(2)}
             stroke="var(--muted-foreground)"
             fontSize={11}
           />

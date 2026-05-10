@@ -113,16 +113,29 @@ export default async function Page({
         ) : null}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           <Stat
-            label="Judge score"
+            label="NDCG@3"
             value={
-              stats.mean_judge_score === null
+              stats.mean_ndcg_at_3 === null
                 ? "—"
-                : `${stats.mean_judge_score.toFixed(2)}/20`
+                : stats.mean_ndcg_at_3.toFixed(3)
             }
             sub={
-              stats.mean_judge_score === null
+              stats.n_scored === 0
                 ? `${stats.count_valid}/${stats.count_total} valid`
-                : `${stats.judge_n} judged · ${stats.count_valid}/${stats.count_total} valid`
+                : `${stats.n_scored} scored · ${stats.count_valid}/${stats.count_total} valid`
+            }
+          />
+          <Stat
+            label="Hit@1"
+            value={
+              stats.hit_at_1_rate === null
+                ? "—"
+                : `${(stats.hit_at_1_rate * 100).toFixed(1)}%`
+            }
+            sub={
+              stats.mean_justification_quality === null
+                ? undefined
+                : `JustifQ ${stats.mean_justification_quality.toFixed(2)}/5`
             }
           />
           <Stat
@@ -220,6 +233,34 @@ export default async function Page({
           <DetailRow
             label="estimated_cost_usd_per_run"
             value={fmt(stats.estimated_cost_usd_per_run, 6, "$")}
+          />
+          <DetailRow
+            label="mean_ndcg_at_3"
+            value={fmt(stats.mean_ndcg_at_3, 3)}
+          />
+          <DetailRow
+            label="hit_at_1_rate"
+            value={
+              stats.hit_at_1_rate === null
+                ? "—"
+                : `${(stats.hit_at_1_rate * 100).toFixed(1)}%`
+            }
+          />
+          <DetailRow
+            label="mean_precision_at_3"
+            value={fmt(stats.mean_precision_at_3, 3)}
+          />
+          <DetailRow
+            label="mean_recall_at_3"
+            value={fmt(stats.mean_recall_at_3, 3)}
+          />
+          <DetailRow
+            label="n_scored"
+            value={String(stats.n_scored)}
+          />
+          <DetailRow
+            label="mean_justification_quality"
+            value={fmt(stats.mean_justification_quality, 2, "", "/5")}
           />
           <DetailRow
             label="mean_judge_score"

@@ -16,7 +16,7 @@ import type { FrameworkStats } from "@/lib/stats";
 interface Datum {
   framework: string;
   qpd: number;
-  judgeScore: number;
+  ndcg: number;
   cost: number;
 }
 
@@ -29,12 +29,12 @@ export function QualityPerDollarChart({ stats }: { stats: FrameworkStats[] }) {
   const data: Datum[] = stats
     .filter(
       (s) =>
-        s.mean_judge_score !== null && s.estimated_cost_usd_per_run !== null,
+        s.mean_ndcg_at_3 !== null && s.estimated_cost_usd_per_run !== null,
     )
     .map((s) => ({
       framework: s.framework,
-      qpd: (s.mean_judge_score as number) / (s.estimated_cost_usd_per_run as number),
-      judgeScore: s.mean_judge_score as number,
+      qpd: (s.mean_ndcg_at_3 as number) / (s.estimated_cost_usd_per_run as number),
+      ndcg: s.mean_ndcg_at_3 as number,
       cost: s.estimated_cost_usd_per_run as number,
     }))
     .sort((a, b) => b.qpd - a.qpd);
@@ -65,7 +65,7 @@ export function QualityPerDollarChart({ stats }: { stats: FrameworkStats[] }) {
           stroke="var(--muted-foreground)"
           fontSize={11}
           label={{
-            value: "Judge points per USD",
+            value: "NDCG@3 per USD",
             position: "insideBottom",
             offset: -4,
             fontSize: 11,
@@ -90,8 +90,8 @@ export function QualityPerDollarChart({ stats }: { stats: FrameworkStats[] }) {
             if (name === "qpd" && typeof value === "number") {
               const d = item.payload as Datum;
               return [
-                `${value.toFixed(0)} pts/$ (${d.judgeScore.toFixed(2)}/20 ÷ $${d.cost.toFixed(4)})`,
-                "Quality per dollar",
+                `${value.toFixed(4)} NDCG/$  (${d.ndcg.toFixed(3)} ÷ $${d.cost.toFixed(4)})`,
+                "NDCG@3 per dollar",
               ];
             }
             return [String(value), name];
@@ -105,7 +105,7 @@ export function QualityPerDollarChart({ stats }: { stats: FrameworkStats[] }) {
             dataKey="qpd"
             position="right"
             formatter={(v) =>
-              typeof v === "number" ? v.toFixed(0) : String(v ?? "")
+              typeof v === "number" ? v.toFixed(4) : String(v ?? "")
             }
             fontSize={11}
             fill="var(--foreground)"

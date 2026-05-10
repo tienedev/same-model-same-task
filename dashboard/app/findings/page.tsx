@@ -35,22 +35,22 @@ export default function FindingsPage() {
   const qpdSorted = [...summary.frameworks]
     .filter(
       (s) =>
-        s.mean_judge_score !== null && s.estimated_cost_usd_per_run !== null,
+        s.mean_ndcg_at_3 !== null && s.estimated_cost_usd_per_run !== null,
     )
     .sort(
       (a, b) =>
-        (b.mean_judge_score as number) /
+        (b.mean_ndcg_at_3 as number) /
           (b.estimated_cost_usd_per_run as number) -
-        (a.mean_judge_score as number) /
+        (a.mean_ndcg_at_3 as number) /
           (a.estimated_cost_usd_per_run as number),
     );
   const topQpd = qpdSorted[0];
   const bottomQpd = qpdSorted[qpdSorted.length - 1];
   const topQpdValue =
-    (topQpd.mean_judge_score as number) /
+    (topQpd.mean_ndcg_at_3 as number) /
     (topQpd.estimated_cost_usd_per_run as number);
   const bottomQpdValue =
-    (bottomQpd.mean_judge_score as number) /
+    (bottomQpd.mean_ndcg_at_3 as number) /
     (bottomQpd.estimated_cost_usd_per_run as number);
 
   const p95Worst = [...summary.latency_distribution].sort(
@@ -133,31 +133,28 @@ export default function FindingsPage() {
             <>
               {topQpd.framework} delivers{" "}
               <span className="text-emerald-600 dark:text-emerald-400">
-                {(topQpdValue / bottomQpdValue).toFixed(0)}× the judge points
+                {(topQpdValue / bottomQpdValue).toFixed(0)}× the NDCG@3
                 per dollar
               </span>{" "}
               of {bottomQpd.framework}.
             </>
           }
-          description="Cost and quality alone are misleading axes. Cost / quality together is the metric a buyer should care about — and it crowns a different framework than either column individually."
+          description="Cost and quality alone are misleading axes. NDCG@3 / cost together is the metric a buyer should care about — and it crowns a different framework than either column individually."
         >
           <QualityPerDollarChart stats={summary.frameworks} />
           <p>
-            On absolute quality, LangGraph wins (15.59/20). On absolute cost,
-            Vercel AI SDK wins ($0.0060/run). The efficiency frontier — judge
-            points per dollar — surfaces a third story: <strong>Vercel AI
-            SDK delivers more quality per dollar than every other framework
-            in the bench, despite ranking last on raw quality.</strong> Its
-            13.07/20 paid for at $0.0060 still beats LangGraph's 15.59/20 paid
-            for at $0.0164.
+            The efficiency frontier — NDCG@3 per dollar — surfaces which
+            framework gives the best retrieval quality for the money spent.{" "}
+            <strong>{topQpd.framework} leads on quality-per-dollar</strong>,
+            while {bottomQpd.framework} sits at the bottom of the frontier.
           </p>
           <Callout title="The Pareto-dominated framework">
             <p>
-              CrewAI sits at {bottomQpdValue.toFixed(0)} pts/$ — the only
-              framework that loses on every individual axis except success rate.
-              Higher cost than the average, lower quality than the top group.
-              Its 27× input-token spend doesn't translate to better judge
-              outputs; it's pure framework overhead being billed as if it were
+              {bottomQpd.framework} sits at {bottomQpdValue.toFixed(4)} NDCG/$ — the
+              framework that loses on the efficiency axis.
+              Higher cost than the average without a commensurate NDCG@3 gain.
+              Its token spend doesn't translate to better retrieval quality;
+              it's pure framework overhead being billed as if it were
               capability.
             </p>
           </Callout>

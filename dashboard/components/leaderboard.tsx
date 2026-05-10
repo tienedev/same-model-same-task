@@ -26,10 +26,10 @@ function fmtTokens(input: number | null, output: number | null): string {
 }
 
 function rankSortValue(stats: FrameworkStats): number {
-  // Sort by judge score descending — quality is the primary axis. Frameworks
-  // without a judge score yet (judge_n=0 / null) drop to the bottom.
+  // Sort by NDCG@3 descending — deterministic IR scorer is the primary axis.
+  // Frameworks without a score yet (n_scored=0 / null) drop to the bottom.
   // Negate so that higher = better still works with ascending .sort().
-  return stats.mean_judge_score === null ? Number.POSITIVE_INFINITY : -stats.mean_judge_score;
+  return stats.mean_ndcg_at_3 === null ? Number.POSITIVE_INFINITY : -stats.mean_ndcg_at_3;
 }
 
 const rankBadgeStyles: Record<number, string> = {
@@ -92,17 +92,19 @@ export function Leaderboard({ stats }: { stats: FrameworkStats[] }) {
             <TableHead className="w-12 text-center">#</TableHead>
             <TableHead>Framework</TableHead>
             <TableHead className="text-right">Valid</TableHead>
-            <TableHead className="text-right">Judge /20</TableHead>
+            <TableHead className="text-right">NDCG@3</TableHead>
+            <TableHead className="text-right">Hit@1</TableHead>
             <TableHead className="text-right">p50 (s)</TableHead>
             <TableHead className="text-right">p95 (s)</TableHead>
             <TableHead className="text-right">Tokens (in / out)</TableHead>
             <TableHead className="text-right">Tools</TableHead>
             <TableHead className="text-right">Cost / run</TableHead>
+            <TableHead className="text-right" title="Justification quality axis only (1–5). Judge /20 retired as primary signal — see README Scoring section.">JustifQ /5</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {ranked.map((s, i) => {
-            const hasResult = s.mean_judge_score !== null;
+            const hasResult = s.mean_ndcg_at_3 !== null;
             const rank = i + 1;
             const lang = frameworkLanguage(s.framework);
             const cost = s.estimated_cost_usd_per_run;
@@ -128,7 +130,10 @@ export function Leaderboard({ stats }: { stats: FrameworkStats[] }) {
                   {s.count_valid}/{s.count_total}
                 </TableCell>
                 <TableCell className="text-right font-mono tabular-nums font-medium">
-                  {fmt(s.mean_judge_score, 2)}
+                  {fmt(s.mean_ndcg_at_3, 3)}
+                </TableCell>
+                <TableCell className="text-right font-mono tabular-nums text-muted-foreground">
+                  {s.hit_at_1_rate === null ? "—" : `${(s.hit_at_1_rate * 100).toFixed(1)}%`}
                 </TableCell>
                 <TableCell className="text-right font-mono tabular-nums text-muted-foreground">
                   {fmt(s.latency_p50)}
@@ -144,6 +149,9 @@ export function Leaderboard({ stats }: { stats: FrameworkStats[] }) {
                 </TableCell>
                 <TableCell className="text-right">
                   <CostCell value={cost} ratio={costRatio} />
+                </TableCell>
+                <TableCell className="text-right font-mono tabular-nums text-muted-foreground">
+                  {fmt(s.mean_justification_quality, 2)}
                 </TableCell>
               </TableRow>
             );
