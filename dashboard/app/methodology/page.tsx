@@ -271,8 +271,8 @@ export default function MethodologyPage() {
           <BorderedTable
             headers={[
               "Framework",
-              "Native Gemini path (preserves signatures)",
-              "OpenAI-compat path (used here)",
+              "Native Gemini path (for thinking models)",
+              "OpenAI-compat path (used by this bench)",
             ]}
             rows={[
               [
