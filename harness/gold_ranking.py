@@ -191,6 +191,6 @@ def compute_deterministic_score(parsed_output: dict[str, Any], job_id: str) -> d
         "recall_at_3": recall_at_3,
         "invalid_id_in_ranked": invalid_id_in_ranked,
         # JSON-friendly snapshots: lists of [id, rel] pairs
-        "agent_top_3": [[cid, rel] for cid, rel in zip(agent_ids, agent_rels, strict=False)],
         "gold_top_3": [[cid, rel] for cid, rel in gold_pairs],
+        "agent_top_3": [[cid, rel] for cid, rel in zip(agent_ids, agent_rels, strict=True)],
     }
