@@ -145,7 +145,54 @@ def _fmt_or_dash(value: float | int | None, fmt: str = ".1f") -> str:
     return format(value, fmt)
 
 
-def write_summary_json(stats: list[dict[str, Any]], out: Path) -> None:
+def compute_per_job_success(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """For each (framework, job_id) pair, return success rate.
+
+    Used by the /findings page heatmap: which jobs break which frameworks?
+    """
+    by_pair: dict[tuple[str, str], list[bool]] = {}
+    for r in runs:
+        key = (r["framework"], r["job_id"])
+        by_pair.setdefault(key, []).append(bool(r.get("valid")))
+
+    return [
+        {
+            "framework": fw,
+            "job_id": job,
+            "success_rate": sum(valids) / len(valids) if valids else 0.0,
+            "n_trials": len(valids),
+        }
+        for (fw, job), valids in sorted(by_pair.items())
+    ]
+
+
+def compute_latency_distribution(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Per-framework latency distribution (min, p50, p95, max + raw points).
+
+    Used by the /findings page outlier analysis.
+    """
+    by_fw: dict[str, list[float]] = {}
+    for r in runs:
+        if r.get("valid") and "elapsed_s" in r:
+            by_fw.setdefault(r["framework"], []).append(r["elapsed_s"])
+
+    out = []
+    for fw, lats in sorted(by_fw.items()):
+        sorted_lats = sorted(lats)
+        out.append({
+            "framework": fw,
+            "n": len(lats),
+            "min": min(lats),
+            "p50": _percentile(sorted_lats, 0.50),
+            "p95": _percentile(sorted_lats, 0.95),
+            "max": max(lats),
+            # Raw values for the strip plot — sorted ascending so stable rendering
+            "values": sorted_lats,
+        })
+    return out
+
+
+def write_summary_json(stats: list[dict[str, Any]], out: Path, runs: list[dict[str, Any]]) -> None:
     """Write the structured summary as JSON. Creates parent dirs if needed."""
     out.parent.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -155,6 +202,8 @@ def write_summary_json(stats: list[dict[str, Any]], out: Path) -> None:
             "pricing_usd_per_m_tokens": GEMINI_PRICING,
         },
         "frameworks": stats,
+        "per_job_success": compute_per_job_success(runs),
+        "latency_distribution": compute_latency_distribution(runs),
     }
     out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
 
@@ -239,7 +288,7 @@ def main(input_dir: str, out_json: str, out_md: str) -> None:
     """Aggregate results/*.json into summary.json + summary.md, refresh README."""
     runs = load_results(Path(input_dir))
     stats = compute_stats(runs)
-    write_summary_json(stats, Path(out_json))
+    write_summary_json(stats, Path(out_json), runs)
     write_summary_md(stats, Path(out_md))
     # Refresh README leaderboard if README exists with sentinel block.
     inject_leaderboard(Path("README.md"), _build_leaderboard_md(stats))

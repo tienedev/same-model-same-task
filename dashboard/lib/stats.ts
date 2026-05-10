@@ -18,6 +18,23 @@ export interface FrameworkStats {
   judge_n: number;
 }
 
+export interface PerJobSuccess {
+  framework: string;
+  job_id: string;
+  success_rate: number;
+  n_trials: number;
+}
+
+export interface LatencyDistribution {
+  framework: string;
+  n: number;
+  min: number;
+  p50: number;
+  p95: number;
+  max: number;
+  values: number[];
+}
+
 export interface Summary {
   metadata: {
     generated_at: string;
@@ -25,6 +42,8 @@ export interface Summary {
     pricing_usd_per_m_tokens: { in_per_m: number; out_per_m: number };
   };
   frameworks: FrameworkStats[];
+  per_job_success: PerJobSuccess[];
+  latency_distribution: LatencyDistribution[];
 }
 
 export const summary = summaryData as Summary;

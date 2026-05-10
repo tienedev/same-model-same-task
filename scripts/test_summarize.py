@@ -71,12 +71,15 @@ def test_write_summary_json(tmp_path):
     import json
 
     from scripts.summarize import compute_stats, load_results, write_summary_json
-    stats = compute_stats(load_results(FIXTURES_DIR))
+    runs = load_results(FIXTURES_DIR)
+    stats = compute_stats(runs)
     out = tmp_path / "summary.json"
-    write_summary_json(stats, out)
+    write_summary_json(stats, out, runs)
     data = json.loads(out.read_text(encoding="utf-8"))
     assert "frameworks" in data
     assert "metadata" in data
+    assert "per_job_success" in data
+    assert "latency_distribution" in data
     assert len(data["frameworks"]) == 2
     assert data["metadata"]["n_frameworks"] == 2
     assert "generated_at" in data["metadata"]

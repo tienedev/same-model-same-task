@@ -8,6 +8,11 @@ import { cn } from "@/lib/utils";
 const links = [
   { href: "/", label: "Leaderboard", match: (p: string) => p === "/" },
   {
+    href: "/findings",
+    label: "Findings",
+    match: (p: string) => p.startsWith("/findings"),
+  },
+  {
     href: "/methodology",
     label: "Methodology",
     match: (p: string) => p.startsWith("/methodology"),
