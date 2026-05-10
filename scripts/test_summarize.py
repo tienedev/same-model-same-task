@@ -138,3 +138,56 @@ def test_inject_leaderboard_skips_if_no_sentinels(tmp_path):
     original = p.read_text(encoding="utf-8")
     inject_leaderboard(p, "| F | V |\n|---|---|\n| x | 1 |")
     assert p.read_text(encoding="utf-8") == original
+
+
+class TestDeterministicAggregation:
+    def _runs_with_det_scores(self):
+        return [
+            {
+                "framework": "fwX", "valid": True, "elapsed_s": 1.0,
+                "input_tokens": 100, "output_tokens": 50, "tool_calls": 3,
+                "deterministic_score": {
+                    "ndcg_at_3": 1.0, "hit_at_1": True,
+                    "precision_at_3": 1.0, "recall_at_3": 1.0,
+                    "invalid_id_in_ranked": False,
+                    "agent_top_3": [], "gold_top_3": [],
+                },
+            },
+            {
+                "framework": "fwX", "valid": True, "elapsed_s": 2.0,
+                "input_tokens": 200, "output_tokens": 80, "tool_calls": 5,
+                "deterministic_score": {
+                    "ndcg_at_3": 0.5, "hit_at_1": False,
+                    "precision_at_3": 0.33, "recall_at_3": 0.33,
+                    "invalid_id_in_ranked": False,
+                    "agent_top_3": [], "gold_top_3": [],
+                },
+            },
+            {
+                "framework": "fwX", "valid": False,
+                "deterministic_score": {"skipped": True, "reason": "invalid"},
+            },
+        ]
+
+    def test_aggregates_ndcg_and_hit_at_1(self):
+        from scripts.summarize import compute_stats
+        stats = compute_stats(self._runs_with_det_scores())
+        fwx = next(s for s in stats if s["framework"] == "fwX")
+        # Mean of 1.0 and 0.5
+        assert fwx["mean_ndcg_at_3"] == pytest.approx(0.75)
+        # Hit@1 rate: 1 of 2 valid runs
+        assert fwx["hit_at_1_rate"] == pytest.approx(0.5)
+        assert fwx["n_scored"] == 2
+
+    def test_handles_missing_det_score(self):
+        """Old results JSONs without deterministic_score → metrics are None."""
+        from scripts.summarize import compute_stats
+        runs = [
+            {"framework": "old", "valid": True, "elapsed_s": 1.0,
+             "input_tokens": 1, "output_tokens": 1, "tool_calls": 0}
+        ]
+        stats = compute_stats(runs)
+        s = stats[0]
+        assert s["mean_ndcg_at_3"] is None
+        assert s["hit_at_1_rate"] is None
+        assert s["n_scored"] == 0

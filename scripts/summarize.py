@@ -97,6 +97,29 @@ def compute_stats(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
             mean_judge_score = statistics.mean(judge_totals) if judge_totals else None
             judge_n = len(judge_totals)
 
+            # Deterministic scores: only counted for runs with a non-skipped
+            # deterministic_score block (i.e., post-hoc scoring already ran).
+            det_ndcgs: list[float] = []
+            det_hits: list[bool] = []
+            det_precisions: list[float] = []
+            det_recalls: list[float] = []
+            for r in valid:
+                d = r.get("deterministic_score")
+                if not d or d.get("skipped"):
+                    continue
+                try:
+                    det_ndcgs.append(float(d["ndcg_at_3"]))
+                    det_hits.append(bool(d["hit_at_1"]))
+                    det_precisions.append(float(d["precision_at_3"]))
+                    det_recalls.append(float(d["recall_at_3"]))
+                except (KeyError, TypeError, ValueError):
+                    continue
+            n_scored = len(det_ndcgs)
+            mean_ndcg_at_3 = statistics.mean(det_ndcgs) if det_ndcgs else None
+            hit_at_1_rate = (sum(det_hits) / n_scored) if n_scored else None
+            mean_precision_at_3 = statistics.mean(det_precisions) if det_precisions else None
+            mean_recall_at_3 = statistics.mean(det_recalls) if det_recalls else None
+
             per_valid_metrics: dict[str, Any] = {
                 "latency_p50": _percentile(latencies, 0.50),
                 "latency_p95": _percentile(latencies, 0.95),
@@ -111,6 +134,11 @@ def compute_stats(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 ),
                 "mean_judge_score": mean_judge_score,
                 "judge_n": judge_n,
+                "mean_ndcg_at_3": mean_ndcg_at_3,
+                "hit_at_1_rate": hit_at_1_rate,
+                "mean_precision_at_3": mean_precision_at_3,
+                "mean_recall_at_3": mean_recall_at_3,
+                "n_scored": n_scored,
             }
         else:
             per_valid_metrics = {
@@ -125,6 +153,11 @@ def compute_stats(runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "hit_step_limit_rate": None,
                 "mean_judge_score": None,
                 "judge_n": 0,
+                "mean_ndcg_at_3": None,
+                "hit_at_1_rate": None,
+                "mean_precision_at_3": None,
+                "mean_recall_at_3": None,
+                "n_scored": 0,
             }
 
         out.append({
