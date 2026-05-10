@@ -1,0 +1,18 @@
+{
+  "framework": "frameworkA",
+  "started_at": "2026-05-08T10:05:00Z",
+  "runs": [
+    {
+      "framework": "frameworkA", "job_id": "job-002", "trial": 1, "valid": true,
+      "elapsed_s": 20.0, "input_tokens": 2000, "output_tokens": 400, "tool_calls": 8,
+      "parsed_output": {
+        "job_id": "job-002",
+        "ranked_candidates": [
+          {"rank": 1, "candidate_id": "cand-004", "score": 95, "justification": "x"},
+          {"rank": 2, "candidate_id": "cand-005", "score": 85, "justification": "y"},
+          {"rank": 3, "candidate_id": "cand-006", "score": 75, "justification": "z"}
+        ]
+      }
+    }
+  ]
+}

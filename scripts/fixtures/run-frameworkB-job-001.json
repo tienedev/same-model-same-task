@@ -1,0 +1,11 @@
+{
+  "framework": "frameworkB",
+  "started_at": "2026-05-08T10:10:00Z",
+  "runs": [
+    {
+      "framework": "frameworkB", "job_id": "job-001", "trial": 1, "valid": false,
+      "elapsed_s": 5.0, "input_tokens": 500, "output_tokens": 50, "tool_calls": 3,
+      "validation_error": "missing key: ranked_candidates"
+    }
+  ]
+}
