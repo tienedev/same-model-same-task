@@ -1,15 +1,23 @@
 """LLM judge: scores valid runs on 4 criteria using Gemini.
 
-Per task-spec § 7. Uses GEMINI_API_KEY only (no Anthropic / OpenRouter).
-The judge is Gemini — same family as the generator. **This introduces a
-self-judging bias** (~15-20% over-rating documented in the LLM-as-judge
-literature). To explicitly note in the blog post; an interesting follow-up
-is to swap in a different judge later (the openai SDK + base_url shape
-makes this a 1-line change).
+**As of 2026-05-10 the judge is a SECONDARY signal.** The leaderboard's primary
+ranking is the deterministic NDCG@3 + Hit@1 scorer in `harness/score_deterministic.py`
+(see `docs/plans/2026-05-10-deterministic-scorer-design.md`). Only the
+`justification_quality` axis is surfaced; `relevance` and `score_coherence` are
+subsumed by the deterministic scorer or circular (the agent invents both the
+score and the justification in the same generation step), and `format` is
+filtered by validation upstream.
 
-Skips runs that failed programmatic validation. Caches judgments by
-(framework, job_id, output content hash) to avoid re-judging identical
-outputs.
+The judge is Gemini — same family as the generator — and the literature
+documents self-preference bias *up to 50%* on objective rubrics, traced to
+perplexity-based familiarity (Panickssery et al. NeurIPS 2024; arXiv 2410.21819).
+The judge's output is preserved in the JSON for historical comparison; the
+leaderboard renders `justification_quality` only, with a footnote citing the
+self-bias finding.
+
+Caches judgments by (framework, job_id, output content hash) — content-keyed,
+so cached values survive prompt-text changes. Skips runs that failed
+programmatic validation.
 
 Usage:
     GEMINI_API_KEY=... python harness/judge.py results/baseline-python.json

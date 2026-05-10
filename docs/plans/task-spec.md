@@ -175,6 +175,10 @@ Pour les runs qui passent la validation programmatique, judge Claude évalue sur
 
 Prompt judge à drafter pendant l'impl du harness, mais structure verrouillée ici.
 
+---
+
+**Update 2026-05-10** : the LLM-judge is now a **secondary** signal. The primary leaderboard ranking is the deterministic NDCG@3 + Hit@1 scorer over a graded-relevance rubric — see `docs/plans/2026-05-10-deterministic-scorer-design.md`. Of the 4 axes above, only `justification_quality` is surfaced in the leaderboard; `relevance` is replaced by the deterministic scorer, `score_coherence` is circular (agent generates both the score and the justification), and `format` is filtered upstream by validation.
+
 ## 8. Plan de runs
 
 **Par framework + baseline** :

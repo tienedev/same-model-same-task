@@ -24,6 +24,21 @@ A cross-language benchmark of 8 LLM agent frameworks (5 Python + 3 TypeScript) c
 
 > Re-run `python scripts/summarize.py` after a bench run to refresh the table above.
 
+## Scoring
+
+The leaderboard is anchored on **NDCG@3** (Normalized Discounted Cumulative Gain at rank 3) over a graded-relevance gold ranking, with **Hit@1** as the secondary signal. Both are deterministic and re-computable from `data/` alone — no API calls.
+
+**How the gold relevance is assigned.** For each (job, candidate) pair we compute `score_match()` (a pure function over the dataset — see `tools/python/tools.py`) and map its breakdown to a graded relevance `rel ∈ {0, 1, 2, 3}`:
+
+- **3** — `skill_match_pct ≥ 67`, no hard dealbreaker (under-experienced, location mismatch, above-max salary), no soft concern (over-qualified, remote-compatible-only, below-min salary).
+- **2** — same as 3 but with exactly one soft concern.
+- **1** — strong skills with 2+ soft concerns, *or* mid-range skills (34-66%) with no dealbreaker.
+- **0** — any hard dealbreaker, or `skill_match_pct < 34`.
+
+NDCG@3 then evaluates how well the agent's top-3 prioritizes the highest-`rel` candidates with a log₂ position discount. Hit@1 is `True` when the agent's #1 has `rel ≥ 2`. The mapping is *opinionated, not ground truth*: a "skills-first lex" or "strict 80%" rubric would yield different gold rankings on edge candidates. The rubric lives in one place — `_rel_from_breakdown()` in `harness/gold_ranking.py` — so disagreement is visible.
+
+The previous `/20` LLM-judge score is preserved in the JSON for historical comparison but no longer surfaced: Gemini judging Gemini exhibits documented self-preference bias (see Caveats § 2 below).
+
 ## Charts
 
 Live dashboard (Pareto cost-vs-success, tokens stacked vs baseline) is online — see the `dashboard/` Next.js app. Run `bun run dev` from `dashboard/` to view locally.
@@ -103,7 +118,7 @@ This bug doesn't surface in single-framework quickstarts. It only emerges in a c
 
 ### 2. Other limits
 
-- **Gemini judges Gemini.** Self-judging bias is documented at ~15-20% over-rating on a model's own outputs. The `/20` scores are useful for ordering frameworks, not for cross-vendor comparison; a follow-up swapping the judge for GPT-5 or Claude would quantify the delta.
+- **Gemini judges Gemini.** Self-preference bias is documented at *up to 50% rubric-flip* on objective rubrics (Panickssery et al. NeurIPS 2024; arXiv 2410.21819), traced to perplexity-based familiarity — a mechanical effect, not fixable by prompt tweaks. This is why the leaderboard now anchors on the deterministic NDCG@3 + Hit@1 scorer (see § Scoring) and the LLM-judge is reduced to `justification_quality` (a prose-readability signal that's harder to evaluate deterministically).
 - **Per-framework metric availability gaps.** CrewAI's `tool_calls` was historically zero before we wired its `step_callback`. If a future SDK upgrade changes its callback shape, that field reverts to `null` rather than silently misleading.
 - **Sample size.** The headline run is 30 trials per framework. Confidence intervals on `p95` get noisy below 100 trials — interpret single-decimal differences with caution.
 
