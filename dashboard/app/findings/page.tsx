@@ -84,6 +84,7 @@ export default function FindingsPage() {
       <div className="space-y-20 pt-12">
         {/* FINDING 1 — token cost variance */}
         <Section
+          id="finding-1"
           eyebrow="Finding 1 · Token cost"
           title={
             <>
@@ -126,6 +127,7 @@ export default function FindingsPage() {
 
         {/* FINDING 2 — quality-per-dollar */}
         <Section
+          id="finding-2"
           eyebrow="Finding 2 · Efficiency frontier"
           title={
             <>
@@ -163,6 +165,7 @@ export default function FindingsPage() {
 
         {/* FINDING 3 — p95 outliers */}
         <Section
+          id="finding-3"
           eyebrow="Finding 3 · Outliers"
           title={
             <>
@@ -215,6 +218,7 @@ export default function FindingsPage() {
 
         {/* FINDING 4 — per-job heatmap */}
         <Section
+          id="finding-4"
           eyebrow="Finding 4 · Job-level breakdown"
           title="Failures cluster on specific job × framework pairs."
           description="The success-rate column averages over ten job categories. Some frameworks are uniformly reliable; others fail consistently on specific shapes of input."
@@ -254,18 +258,20 @@ export default function FindingsPage() {
 /* ───── Layout primitives (mirrors /methodology) ───── */
 
 function Section({
+  id,
   eyebrow,
   title,
   description,
   children,
 }: {
+  id?: string;
   eyebrow: string;
   title: ReactNode;
   description?: string;
   children: ReactNode;
 }) {
   return (
-    <section className="space-y-6">
+    <section id={id} className="scroll-mt-20 space-y-6">
       <div className="space-y-2">
         <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
           {eyebrow}
