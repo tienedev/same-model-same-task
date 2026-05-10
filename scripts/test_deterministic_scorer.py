@@ -176,3 +176,62 @@ class TestNdcgAt3:
         # NDCG = 0.6309 / 1.0
         expected = (1 / math.log2(3)) / 1.0
         assert ndcg_at_3(agent_rels=[0, 1, 0], gold_rels=[1, 0, 0]) == pytest.approx(expected)
+
+
+class TestComputeDeterministicScore:
+    def test_known_good_baseline_python_trial_2(self):
+        """trial 2 of baseline-python on job-001 picks cand-001/026/003.
+        cand-001 (rel=3) is the textbook winner → Hit@1 must be True.
+        """
+        from harness.gold_ranking import compute_deterministic_score
+        parsed_output = {
+            "job_id": "job-001",
+            "ranked_candidates": [
+                {"rank": 1, "candidate_id": "cand-001", "score": 100, "justification": "..."},
+                {"rank": 2, "candidate_id": "cand-026", "score": 96, "justification": "..."},
+                {"rank": 3, "candidate_id": "cand-003", "score": 93, "justification": "..."},
+            ],
+        }
+        result = compute_deterministic_score(parsed_output, "job-001")
+        assert result["hit_at_1"] is True
+        assert 0.0 <= result["ndcg_at_3"] <= 1.0
+        assert 0.0 <= result["precision_at_3"] <= 1.0
+        assert 0.0 <= result["recall_at_3"] <= 1.0
+        assert result["invalid_id_in_ranked"] is False
+        # Snapshot shape: 3 tuples in agent and gold
+        assert len(result["agent_top_3"]) == 3
+        assert len(result["gold_top_3"]) == 3
+        # The agent's #1 is cand-001 with rel=3 → first element
+        assert result["agent_top_3"][0] == ["cand-001", 3]
+
+    def test_invalid_id_detected(self):
+        from harness.gold_ranking import compute_deterministic_score
+        parsed_output = {
+            "job_id": "job-001",
+            "ranked_candidates": [
+                {"rank": 1, "candidate_id": "cand-001", "score": 100, "justification": "x"},
+                {"rank": 2, "candidate_id": "cand-FAKE", "score": 50, "justification": "x"},
+                {"rank": 3, "candidate_id": "cand-003", "score": 33, "justification": "x"},
+            ],
+        }
+        result = compute_deterministic_score(parsed_output, "job-001")
+        assert result["invalid_id_in_ranked"] is True
+
+    def test_hit_at_1_requires_rel_at_least_2(self):
+        """Agent's #1 with rel=1 (marginal) does NOT count as a hit."""
+        from harness.gold_ranking import compute_deterministic_score, gold_relevance
+        # Find any candidate with rel <= 1 for job-001 by scanning
+        from harness.gold_ranking import _candidate_ids
+        marginal = next(
+            cid for cid in _candidate_ids() if gold_relevance("job-001", cid) <= 1
+        )
+        parsed_output = {
+            "job_id": "job-001",
+            "ranked_candidates": [
+                {"rank": 1, "candidate_id": marginal, "score": 50, "justification": "x"},
+                {"rank": 2, "candidate_id": "cand-001", "score": 40, "justification": "x"},
+                {"rank": 3, "candidate_id": "cand-003", "score": 30, "justification": "x"},
+            ],
+        }
+        result = compute_deterministic_score(parsed_output, "job-001")
+        assert result["hit_at_1"] is False

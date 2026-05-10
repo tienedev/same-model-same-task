@@ -145,3 +145,52 @@ def ndcg_at_3(agent_rels: list[int], gold_rels: list[int]) -> float:
     if idcg == 0:
         return 1.0
     return _dcg(agent_rels) / idcg
+
+
+def compute_deterministic_score(parsed_output: dict[str, Any], job_id: str) -> dict[str, Any]:
+    """Compute the deterministic_score block for a single valid run.
+
+    Returns a dict suitable to write under run["deterministic_score"] — see
+    docs/plans/2026-05-10-deterministic-scorer-design.md § 6 for the schema.
+    """
+    ranked = parsed_output.get("ranked_candidates") or []
+    agent_ids = [r.get("candidate_id") for r in ranked[:3]]
+
+    valid_ids = set(_candidate_ids())
+    invalid_id_in_ranked = any(cid not in valid_ids for cid in agent_ids)
+
+    # Pad to length 3 in case the agent returned fewer (validation should
+    # have caught this, but compute_deterministic_score must be total).
+    while len(agent_ids) < 3:
+        agent_ids.append(None)
+
+    agent_rels = [
+        gold_relevance(job_id, cid) if cid in valid_ids else 0
+        for cid in agent_ids
+    ]
+    gold_pairs = gold_top_k(job_id, k=3)
+    gold_ids = [cid for cid, _ in gold_pairs]
+    gold_rels = [rel for _, rel in gold_pairs]
+
+    # Hit@1: agent's #1 is relevant or better (rel ≥ 2). Stricter than
+    # "agent_ids[0] == gold_ids[0]" — gives credit for any "Relevant" pick.
+    hit_at_1 = (agent_rels[0] >= 2)
+
+    # Precision@3: fraction of agent's top-3 that are relevant (rel ≥ 2)
+    precision_at_3 = sum(1 for r in agent_rels if r >= 2) / 3
+
+    # Recall@3: fraction of gold top-3 that the agent recovered
+    gold_id_set = set(gold_ids)
+    agent_id_set = {cid for cid in agent_ids if cid in valid_ids}
+    recall_at_3 = len(agent_id_set & gold_id_set) / 3
+
+    return {
+        "ndcg_at_3": ndcg_at_3(agent_rels, gold_rels),
+        "hit_at_1": hit_at_1,
+        "precision_at_3": precision_at_3,
+        "recall_at_3": recall_at_3,
+        "invalid_id_in_ranked": invalid_id_in_ranked,
+        # JSON-friendly snapshots: lists of [id, rel] pairs
+        "agent_top_3": [[cid, rel] for cid, rel in zip(agent_ids, agent_rels, strict=False)],
+        "gold_top_3": [[cid, rel] for cid, rel in gold_pairs],
+    }
