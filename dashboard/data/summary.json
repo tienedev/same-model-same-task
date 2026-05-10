@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-05-10T22:20:08.039885+00:00",
+    "generated_at": "2026-05-10T22:34:01.099970+00:00",
     "n_frameworks": 8,
     "pricing_usd_per_m_tokens": {
       "in_per_m": 2.0,
@@ -25,11 +25,11 @@
       "mean_judge_score": 13.652173913043478,
       "judge_n": 23,
       "mean_justification_quality": 3.0869565217391304,
-      "mean_ndcg_at_3": null,
-      "hit_at_1_rate": null,
-      "mean_precision_at_3": null,
-      "mean_recall_at_3": null,
-      "n_scored": 0
+      "mean_ndcg_at_3": 0.5704865373085809,
+      "hit_at_1_rate": 0.6521739130434783,
+      "mean_precision_at_3": 0.34782608695652173,
+      "mean_recall_at_3": 0.5072463768115942,
+      "n_scored": 23
     },
     {
       "framework": "baseline-typescript",
@@ -48,11 +48,11 @@
       "mean_judge_score": 13.413793103448276,
       "judge_n": 29,
       "mean_justification_quality": 3,
-      "mean_ndcg_at_3": null,
-      "hit_at_1_rate": null,
-      "mean_precision_at_3": null,
-      "mean_recall_at_3": null,
-      "n_scored": 0
+      "mean_ndcg_at_3": 0.5894280798008418,
+      "hit_at_1_rate": 0.6896551724137931,
+      "mean_precision_at_3": 0.3563218390804598,
+      "mean_recall_at_3": 0.5172413793103448,
+      "n_scored": 29
     },
     {
       "framework": "crewai",
@@ -71,11 +71,11 @@
       "mean_judge_score": 13.807692307692308,
       "judge_n": 26,
       "mean_justification_quality": 3.269230769230769,
-      "mean_ndcg_at_3": null,
-      "hit_at_1_rate": null,
-      "mean_precision_at_3": null,
-      "mean_recall_at_3": null,
-      "n_scored": 0
+      "mean_ndcg_at_3": 0.5984826978636731,
+      "hit_at_1_rate": 0.6923076923076923,
+      "mean_precision_at_3": 0.3846153846153846,
+      "mean_recall_at_3": 0.4615384615384615,
+      "n_scored": 26
     },
     {
       "framework": "google-adk",
@@ -94,11 +94,11 @@
       "mean_judge_score": 15.03448275862069,
       "judge_n": 29,
       "mean_justification_quality": 3.413793103448276,
-      "mean_ndcg_at_3": null,
-      "hit_at_1_rate": null,
-      "mean_precision_at_3": null,
-      "mean_recall_at_3": null,
-      "n_scored": 0
+      "mean_ndcg_at_3": 0.6214958078749588,
+      "hit_at_1_rate": 0.7241379310344828,
+      "mean_precision_at_3": 0.3563218390804598,
+      "mean_recall_at_3": 0.45977011494252873,
+      "n_scored": 29
     },
     {
       "framework": "langgraph",
@@ -117,11 +117,11 @@
       "mean_judge_score": 15.592592592592593,
       "judge_n": 27,
       "mean_justification_quality": 3.7037037037037037,
-      "mean_ndcg_at_3": null,
-      "hit_at_1_rate": null,
-      "mean_precision_at_3": null,
-      "mean_recall_at_3": null,
-      "n_scored": 0
+      "mean_ndcg_at_3": 0.823052321528932,
+      "hit_at_1_rate": 0.9259259259259259,
+      "mean_precision_at_3": 0.5308641975308642,
+      "mean_recall_at_3": 0.5679012345679012,
+      "n_scored": 27
     },
     {
       "framework": "mastra",
@@ -140,11 +140,11 @@
       "mean_judge_score": 13.966666666666667,
       "judge_n": 30,
       "mean_justification_quality": 3.3666666666666667,
-      "mean_ndcg_at_3": null,
-      "hit_at_1_rate": null,
-      "mean_precision_at_3": null,
-      "mean_recall_at_3": null,
-      "n_scored": 0
+      "mean_ndcg_at_3": 0.6102946453744705,
+      "hit_at_1_rate": 0.7333333333333333,
+      "mean_precision_at_3": 0.37777777777777777,
+      "mean_recall_at_3": 0.47777777777777775,
+      "n_scored": 30
     },
     {
       "framework": "pydantic-ai",
@@ -163,11 +163,11 @@
       "mean_judge_score": 15.310344827586206,
       "judge_n": 29,
       "mean_justification_quality": 3.413793103448276,
-      "mean_ndcg_at_3": null,
-      "hit_at_1_rate": null,
-      "mean_precision_at_3": null,
-      "mean_recall_at_3": null,
-      "n_scored": 0
+      "mean_ndcg_at_3": 0.857168616478343,
+      "hit_at_1_rate": 1.0,
+      "mean_precision_at_3": 0.49425287356321834,
+      "mean_recall_at_3": 0.5747126436781609,
+      "n_scored": 29
     },
     {
       "framework": "vercel-ai-sdk",
@@ -186,11 +186,11 @@
       "mean_judge_score": 13.074074074074074,
       "judge_n": 27,
       "mean_justification_quality": 2.888888888888889,
-      "mean_ndcg_at_3": null,
-      "hit_at_1_rate": null,
-      "mean_precision_at_3": null,
-      "mean_recall_at_3": null,
-      "n_scored": 0
+      "mean_ndcg_at_3": 0.6619869901131067,
+      "hit_at_1_rate": 0.7777777777777778,
+      "mean_precision_at_3": 0.37037037037037035,
+      "mean_recall_at_3": 0.5185185185185185,
+      "n_scored": 27
     }
   ],
   "per_job_success": [

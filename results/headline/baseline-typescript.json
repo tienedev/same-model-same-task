@@ -48,6 +48,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1307,
         "judge_output_tokens": 75
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.8303010754742701,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-026",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-036",
+            0
+          ]
+        ]
       }
     },
     {
@@ -95,6 +130,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1323,
         "judge_output_tokens": 94
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.8303010754742701,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-026",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-036",
+            0
+          ]
+        ]
       }
     },
     {
@@ -142,6 +212,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1321,
         "judge_output_tokens": 87
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.8303010754742701,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-026",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-036",
+            0
+          ]
+        ]
       }
     },
     {
@@ -189,6 +294,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1250,
         "judge_output_tokens": 82
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.5701406500739014,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-005",
+            3
+          ],
+          [
+            "cand-006",
+            2
+          ],
+          [
+            "cand-025",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-005",
+            3
+          ],
+          [
+            "cand-002",
+            0
+          ],
+          [
+            "cand-039",
+            0
+          ]
+        ]
       }
     },
     {
@@ -236,6 +376,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1272,
         "judge_output_tokens": 83
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.5701406500739014,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-005",
+            3
+          ],
+          [
+            "cand-006",
+            2
+          ],
+          [
+            "cand-025",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-005",
+            3
+          ],
+          [
+            "cand-002",
+            0
+          ],
+          [
+            "cand-039",
+            0
+          ]
+        ]
       }
     },
     {
@@ -283,6 +458,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1275,
         "judge_output_tokens": 87
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.5701406500739014,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-005",
+            3
+          ],
+          [
+            "cand-006",
+            2
+          ],
+          [
+            "cand-025",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-005",
+            3
+          ],
+          [
+            "cand-002",
+            0
+          ],
+          [
+            "cand-039",
+            0
+          ]
+        ]
       }
     },
     {
@@ -330,6 +540,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1239,
         "judge_output_tokens": 80
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 1.0,
+        "recall_at_3": 1.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-013",
+            2
+          ],
+          [
+            "cand-014",
+            2
+          ],
+          [
+            "cand-016",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-013",
+            2
+          ],
+          [
+            "cand-014",
+            2
+          ],
+          [
+            "cand-016",
+            2
+          ]
+        ]
       }
     },
     {
@@ -377,6 +622,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1251,
         "judge_output_tokens": 84
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 1.0,
+        "recall_at_3": 1.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-013",
+            2
+          ],
+          [
+            "cand-014",
+            2
+          ],
+          [
+            "cand-016",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-013",
+            2
+          ],
+          [
+            "cand-014",
+            2
+          ],
+          [
+            "cand-016",
+            2
+          ]
+        ]
       }
     },
     {
@@ -425,6 +705,41 @@
         "judge_input_tokens": 1239,
         "judge_output_tokens": 80,
         "from_cache": true
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 1.0,
+        "recall_at_3": 1.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-013",
+            2
+          ],
+          [
+            "cand-014",
+            2
+          ],
+          [
+            "cand-016",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-013",
+            2
+          ],
+          [
+            "cand-014",
+            2
+          ],
+          [
+            "cand-016",
+            2
+          ]
+        ]
       }
     },
     {
@@ -472,6 +787,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1244,
         "judge_output_tokens": 86
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.39480936517049525,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-016",
+            1
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-016",
+            1
+          ],
+          [
+            "cand-013",
+            0
+          ]
+        ]
       }
     },
     {
@@ -520,6 +870,41 @@
         "judge_input_tokens": 1244,
         "judge_output_tokens": 86,
         "from_cache": true
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.39480936517049525,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-016",
+            1
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-016",
+            1
+          ],
+          [
+            "cand-013",
+            0
+          ]
+        ]
       }
     },
     {
@@ -567,6 +952,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1314,
         "judge_output_tokens": 80
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.878961873034099,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-016",
+            1
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ]
       }
     },
     {
@@ -614,6 +1034,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1313,
         "judge_output_tokens": 87
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-031",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-007",
+            0
+          ]
+        ]
       }
     },
     {
@@ -661,6 +1116,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1219,
         "judge_output_tokens": 91
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-031",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-031",
+            3
+          ],
+          [
+            "cand-034",
+            0
+          ],
+          [
+            "cand-007",
+            0
+          ]
+        ]
       }
     },
     {
@@ -697,6 +1187,10 @@
       "judgment": {
         "skipped": true,
         "reason": "ranked_candidates must be list of 3, got list len=2"
+      },
+      "deterministic_score": {
+        "skipped": true,
+        "reason": "invalid"
       }
     },
     {
@@ -744,6 +1238,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1288,
         "judge_output_tokens": 76
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7039180890341347,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-038",
+            2
+          ],
+          [
+            "cand-040",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-040",
+            2
+          ]
+        ]
       }
     },
     {
@@ -791,6 +1320,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1299,
         "judge_output_tokens": 99
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7039180890341347,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-038",
+            2
+          ],
+          [
+            "cand-040",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-040",
+            2
+          ]
+        ]
       }
     },
     {
@@ -838,6 +1402,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1312,
         "judge_output_tokens": 93
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-038",
+            2
+          ],
+          [
+            "cand-040",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-007",
+            0
+          ]
+        ]
       }
     },
     {
@@ -885,6 +1484,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1297,
         "judge_output_tokens": 82
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7039180890341347,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-044",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ]
+        ]
       }
     },
     {
@@ -932,6 +1566,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1291,
         "judge_output_tokens": 85
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7039180890341347,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-044",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ]
+        ]
       }
     },
     {
@@ -980,6 +1649,41 @@
         "judge_input_tokens": 1291,
         "judge_output_tokens": 85,
         "from_cache": true
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7039180890341347,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-044",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1027,6 +1731,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1257,
         "judge_output_tokens": 76
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-047",
+            3
+          ],
+          [
+            "cand-050",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ],
+          [
+            "cand-005",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1074,6 +1813,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1274,
         "judge_output_tokens": 81
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-047",
+            3
+          ],
+          [
+            "cand-050",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ],
+          [
+            "cand-005",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1121,6 +1895,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1237,
         "judge_output_tokens": 80
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7039180890341347,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-047",
+            3
+          ],
+          [
+            "cand-050",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-047",
+            3
+          ],
+          [
+            "cand-025",
+            0
+          ],
+          [
+            "cand-032",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1168,6 +1977,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1275,
         "judge_output_tokens": 79
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-024",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-008",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1216,6 +2060,41 @@
         "judge_input_tokens": 1275,
         "judge_output_tokens": 79,
         "from_cache": true
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-024",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-008",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1263,6 +2142,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1244,
         "judge_output_tokens": 95
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-024",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-005",
+            0
+          ],
+          [
+            "cand-007",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1310,6 +2224,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1253,
         "judge_output_tokens": 78
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-028",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1357,6 +2306,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1253,
         "judge_output_tokens": 91
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-028",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1404,6 +2388,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1288,
         "judge_output_tokens": 77
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-028",
+            0
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ]
       }
     }
   ],
@@ -1411,5 +2430,9 @@
     "judged": 29,
     "skipped": 1,
     "judge_model": "gemini-2.5-flash"
+  },
+  "deterministic_summary": {
+    "n_scored": 29,
+    "n_skipped": 1
   }
 }

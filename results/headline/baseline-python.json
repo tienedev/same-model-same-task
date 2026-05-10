@@ -48,6 +48,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1315,
         "judge_output_tokens": 81
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.8303010754742701,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-026",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-036",
+            0
+          ]
+        ]
       }
     },
     {
@@ -95,6 +130,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1345,
         "judge_output_tokens": 93
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7232329748419101,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-026",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-026",
+            2
+          ],
+          [
+            "cand-003",
+            0
+          ]
+        ]
       }
     },
     {
@@ -142,6 +212,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1303,
         "judge_output_tokens": 83
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.8303010754742701,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-026",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            3
+          ],
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-036",
+            0
+          ]
+        ]
       }
     },
     {
@@ -161,6 +266,10 @@
       "judgment": {
         "skipped": true,
         "reason": "invalid"
+      },
+      "deterministic_score": {
+        "skipped": true,
+        "reason": "invalid"
       }
     },
     {
@@ -178,6 +287,10 @@
       "trial": 2,
       "valid": false,
       "judgment": {
+        "skipped": true,
+        "reason": "invalid"
+      },
+      "deterministic_score": {
         "skipped": true,
         "reason": "invalid"
       }
@@ -227,6 +340,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1272,
         "judge_output_tokens": 82
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.8099531166420328,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-005",
+            3
+          ],
+          [
+            "cand-006",
+            2
+          ],
+          [
+            "cand-025",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-005",
+            3
+          ],
+          [
+            "cand-025",
+            2
+          ],
+          [
+            "cand-007",
+            0
+          ]
+        ]
       }
     },
     {
@@ -269,6 +417,10 @@
       "judgment": {
         "skipped": true,
         "reason": "ranked_candidates[0].score must be int 0-100"
+      },
+      "deterministic_score": {
+        "skipped": true,
+        "reason": "invalid"
       }
     },
     {
@@ -311,6 +463,10 @@
       "judgment": {
         "skipped": true,
         "reason": "ranked_candidates[0].score must be int 0-100"
+      },
+      "deterministic_score": {
+        "skipped": true,
+        "reason": "invalid"
       }
     },
     {
@@ -358,6 +514,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1240,
         "judge_output_tokens": 79
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 1.0,
+        "recall_at_3": 1.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-013",
+            2
+          ],
+          [
+            "cand-014",
+            2
+          ],
+          [
+            "cand-016",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-013",
+            2
+          ],
+          [
+            "cand-014",
+            2
+          ],
+          [
+            "cand-016",
+            2
+          ]
+        ]
       }
     },
     {
@@ -405,6 +596,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1318,
         "judge_output_tokens": 97
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.878961873034099,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-016",
+            1
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-029",
+            0
+          ]
+        ]
       }
     },
     {
@@ -452,6 +678,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1315,
         "judge_output_tokens": 81
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.878961873034099,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-016",
+            1
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ]
       }
     },
     {
@@ -499,6 +760,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1316,
         "judge_output_tokens": 80
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.878961873034099,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-016",
+            1
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-023",
+            3
+          ],
+          [
+            "cand-014",
+            1
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ]
       }
     },
     {
@@ -546,6 +842,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1311,
         "judge_output_tokens": 80
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-031",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-007",
+            0
+          ]
+        ]
       }
     },
     {
@@ -593,6 +924,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1316,
         "judge_output_tokens": 82
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-031",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-007",
+            0
+          ]
+        ]
       }
     },
     {
@@ -610,6 +976,10 @@
       "trial": 3,
       "valid": false,
       "judgment": {
+        "skipped": true,
+        "reason": "invalid"
+      },
+      "deterministic_score": {
         "skipped": true,
         "reason": "invalid"
       }
@@ -654,6 +1024,10 @@
       "judgment": {
         "skipped": true,
         "reason": "ranked_candidates[0].score must be int 0-100"
+      },
+      "deterministic_score": {
+        "skipped": true,
+        "reason": "invalid"
       }
     },
     {
@@ -701,6 +1075,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1282,
         "judge_output_tokens": 83
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7039180890341347,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-038",
+            2
+          ],
+          [
+            "cand-040",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-040",
+            2
+          ]
+        ]
       }
     },
     {
@@ -748,6 +1157,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1259,
         "judge_output_tokens": 86
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.8826803184943108,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-038",
+            2
+          ],
+          [
+            "cand-040",
+            2
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-037",
+            2
+          ],
+          [
+            "cand-040",
+            2
+          ],
+          [
+            "cand-039",
+            1
+          ]
+        ]
       }
     },
     {
@@ -784,6 +1228,10 @@
       "judgment": {
         "skipped": true,
         "reason": "ranked_candidates must be list of 3, got list len=2"
+      },
+      "deterministic_score": {
+        "skipped": true,
+        "reason": "invalid"
       }
     },
     {
@@ -831,6 +1279,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1302,
         "judge_output_tokens": 87
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 0.6666666666666666,
+        "recall_at_3": 1.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-044",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-044",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ]
       }
     },
     {
@@ -878,6 +1361,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1282,
         "judge_output_tokens": 80
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-042",
+            3
+          ],
+          [
+            "cand-044",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-007",
+            0
+          ],
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-009",
+            0
+          ]
+        ]
       }
     },
     {
@@ -925,6 +1443,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1278,
         "judge_output_tokens": 75
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-047",
+            3
+          ],
+          [
+            "cand-050",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ],
+          [
+            "cand-005",
+            0
+          ]
+        ]
       }
     },
     {
@@ -972,6 +1525,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1248,
         "judge_output_tokens": 89
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.7039180890341347,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-047",
+            3
+          ],
+          [
+            "cand-050",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-047",
+            3
+          ],
+          [
+            "cand-025",
+            0
+          ],
+          [
+            "cand-032",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1019,6 +1607,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1273,
         "judge_output_tokens": 79
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.3333333333333333,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-047",
+            3
+          ],
+          [
+            "cand-050",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-005",
+            0
+          ],
+          [
+            "cand-007",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1066,6 +1689,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1273,
         "judge_output_tokens": 87
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-024",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-008",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1113,6 +1771,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1286,
         "judge_output_tokens": 84
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-024",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-003",
+            0
+          ],
+          [
+            "cand-008",
+            0
+          ],
+          [
+            "cand-005",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1160,6 +1853,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1249,
         "judge_output_tokens": 92
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 0.0,
+        "hit_at_1": false,
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-024",
+            2
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-005",
+            0
+          ],
+          [
+            "cand-007",
+            0
+          ],
+          [
+            "cand-014",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1207,6 +1935,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1318,
         "judge_output_tokens": 82
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-028",
+            0
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1254,6 +2017,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1304,
         "judge_output_tokens": 100
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-028",
+            0
+          ],
+          [
+            "cand-001",
+            0
+          ]
+        ]
       }
     },
     {
@@ -1301,6 +2099,41 @@
         "judge_model": "gemini-2.5-flash",
         "judge_input_tokens": 1262,
         "judge_output_tokens": 79
+      },
+      "deterministic_score": {
+        "ndcg_at_3": 1.0,
+        "hit_at_1": true,
+        "precision_at_3": 0.3333333333333333,
+        "recall_at_3": 0.6666666666666666,
+        "invalid_id_in_ranked": false,
+        "gold_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-001",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ],
+        "agent_top_3": [
+          [
+            "cand-004",
+            3
+          ],
+          [
+            "cand-028",
+            0
+          ],
+          [
+            "cand-002",
+            0
+          ]
+        ]
       }
     }
   ],
@@ -1308,5 +2141,9 @@
     "judged": 23,
     "skipped": 7,
     "judge_model": "gemini-2.5-flash"
+  },
+  "deterministic_summary": {
+    "n_scored": 23,
+    "n_skipped": 7
   }
 }
