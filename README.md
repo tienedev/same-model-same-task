@@ -101,7 +101,7 @@ This bug doesn't surface in single-framework quickstarts. It only emerges in a c
 
 ### 2. Other limits
 
-- **Gemini judges Gemini.** Self-judging bias is documented at ~15-20% over-rating on a model's own outputs. Set `JUDGE_MODEL` env var to swap for GPT-5 / Claude via OpenRouter to quantify the delta.
+- **Gemini judges Gemini.** Self-judging bias is documented at ~15-20% over-rating on a model's own outputs. The `/20` scores are useful for ordering frameworks, not for cross-vendor comparison; a follow-up swapping the judge for GPT-5 or Claude would quantify the delta.
 - **Per-framework metric availability gaps.** CrewAI's `tool_calls` was historically zero before we wired its `step_callback`. If a future SDK upgrade changes its callback shape, that field reverts to `null` rather than silently misleading.
 - **Sample size.** The headline run is 30 trials per framework. Confidence intervals on `p95` get noisy below 100 trials — interpret single-decimal differences with caution.
 
