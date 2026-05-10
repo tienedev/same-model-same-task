@@ -351,7 +351,7 @@ export default function MethodologyPage() {
             dominates the cost column.
           </Caveat>
           <Caveat label="Google ADK has no client-side step timeout">
-            ADK's p95 latency is <strong>471s</strong> — one or two trials
+            ADK's p95 latency is <strong>471.8s</strong> — one or two trials
             stalled for nearly eight minutes against a p50 of 19.9s. The event
             loop has no client-side cap, so a slow tool call or a stuck step
             blocks until the upstream gives up. In production, that translates

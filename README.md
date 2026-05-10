@@ -40,7 +40,7 @@ Live dashboard (Pareto cost-vs-success, tokens stacked vs baseline) is online �
 
 - **Vercel AI SDK's `ToolLoopAgent` runs at ~1.6k input tokens vs 5–7k elsewhere** — same task, same model, ~3× cheaper per run.
 - **CrewAI's DSL re-injects agent and task config every step**, pushing input tokens to 42k and cost to $0.107 — 6× the bench average.
-- **Google ADK's event loop has no client-side step timeout**: p95 is 471s on a task with a 19.9s p50, blocking on stuck upstream calls.
+- **Google ADK's event loop has no client-side step timeout**: p95 is 471.8s on a task with a 19.9s p50, blocking on stuck upstream calls.
 - **Picking a framework first and a model second is how thinking-model bugs reach production** — the `thought_signature` round-trip breaks 5/8 frameworks under OpenAI-compat.
 - **Single-framework quickstarts hide the hard cases**; only a cross-framework bench surfaces both vendor-specific failures and per-framework cost behavior.
 

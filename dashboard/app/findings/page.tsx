@@ -161,7 +161,7 @@ export default function FindingsPage() {
               .
             </>
           }
-          description={`${p95Worst.framework} runs ${p95Worst.p50.toFixed(1)}s on a typical trial and ${p95Worst.p95.toFixed(0)}s on its 95th percentile. One trial reached ${p95Worst.max.toFixed(0)}s — over twelve minutes on a task that usually takes twenty seconds.`}
+          description={`${p95Worst.framework} runs ${p95Worst.p50.toFixed(1)}s on a typical trial and ${p95Worst.p95.toFixed(1)}s on its 95th percentile. One trial reached ${p95Worst.max.toFixed(0)}s — over twelve minutes on a task that usually takes twenty seconds.`}
         >
           <Callout title="Quick refresher: p50 and p95">
             <p>
