@@ -35,5 +35,8 @@ results/tmp/
 results/canary-*.json
 results/.judge-cache/
 
+# Deterministic scorer cache — re-buildable from data/ at any time
+results/.gold-cache/
+
 # Local Claude state
 .claude/

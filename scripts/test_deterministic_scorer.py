@@ -75,3 +75,70 @@ class TestRelFromBreakdown:
         from harness.gold_ranking import _rel_from_breakdown
         # perfect on every other axis but one hard → still 0
         assert _rel_from_breakdown(_bd(skill=100, loc="mismatch")) == 0
+
+
+class TestGoldRelevance:
+    def test_known_perfect_match(self):
+        """cand-001 is the textbook perfect match for job-001 (per task-spec § 3)."""
+        from harness.gold_ranking import gold_relevance
+        # 100% skills, Paris match, in-range salary, 6y exp on a 5y-min job
+        assert gold_relevance("job-001", "cand-001") == 3
+
+    def test_unknown_returns_zero(self):
+        from harness.gold_ranking import gold_relevance
+        # Unknown ids: score_match returns {"error": ...} → no skill_pct → rel=0
+        assert gold_relevance("job-001", "cand-999") == 0
+        assert gold_relevance("job-999", "cand-001") == 0
+
+
+class TestGoldTopK:
+    def test_returns_k_items_sorted(self):
+        from harness.gold_ranking import gold_top_k
+        top3 = gold_top_k("job-001", k=3)
+        assert len(top3) == 3
+        # sorted by (rel desc, candidate_id asc) — non-increasing rel
+        rels = [rel for _, rel in top3]
+        assert rels == sorted(rels, reverse=True)
+
+    def test_stability_across_calls(self):
+        """Re-running gold_top_k must yield byte-identical output (no hidden RNG)."""
+        from harness.gold_ranking import gold_top_k
+        first = gold_top_k("job-001", k=3)
+        second = gold_top_k("job-001", k=3)
+        assert first == second
+        # Also a 3rd call after explicit re-import
+        import importlib
+        import harness.gold_ranking as gr
+        importlib.reload(gr)
+        third = gr.gold_top_k("job-001", k=3)
+        assert first == third
+
+    def test_tie_break_by_candidate_id_asc(self):
+        """When two candidates share the same rel, lower candidate_id wins."""
+        from harness.gold_ranking import gold_top_k
+        # job-001: cand-001 (rel=3) is unambiguously #1; below it, ties are sorted asc
+        top10 = gold_top_k("job-001", k=10)
+        # Group by rel; within each group, candidate_ids must be ascending
+        from itertools import groupby
+        for rel, group in groupby(top10, key=lambda x: x[1]):
+            ids_in_group = [cid for cid, _ in group]
+            assert ids_in_group == sorted(ids_in_group), (
+                f"tie-break violated within rel={rel} bucket: {ids_in_group}"
+            )
+
+
+class TestDiskCache:
+    def test_cache_file_created_and_reused(self, tmp_path, monkeypatch):
+        """First call writes a cache file; second call reads it (file mtime unchanged)."""
+        import harness.gold_ranking as gr
+        cache_dir = tmp_path / ".gold-cache"
+        monkeypatch.setattr(gr, "CACHE_DIR", cache_dir)
+        gr.gold_relevance("job-001", "cand-001")
+        assert cache_dir.exists()
+        files = list(cache_dir.glob("*.json"))
+        assert len(files) == 1
+        mtime_before = files[0].stat().st_mtime_ns
+        # Second call must not rewrite the file
+        gr.gold_relevance("job-001", "cand-001")
+        mtime_after = files[0].stat().st_mtime_ns
+        assert mtime_before == mtime_after, "cache file rewritten on hit"
