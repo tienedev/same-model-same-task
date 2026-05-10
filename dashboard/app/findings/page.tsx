@@ -163,6 +163,23 @@ export default function FindingsPage() {
           }
           description={`${p95Worst.framework} runs ${p95Worst.p50.toFixed(1)}s on a typical trial and ${p95Worst.p95.toFixed(0)}s on its 95th percentile. One trial reached ${p95Worst.max.toFixed(0)}s — over twelve minutes on a task that usually takes twenty seconds.`}
         >
+          <Callout title="Quick refresher: p50 and p95">
+            <p>
+              Sort the latencies of all trials from fastest to slowest. The{" "}
+              <strong>p50 (median)</strong> is the middle value: half the trials
+              are faster, half are slower. It describes what a typical user
+              experiences. The <strong>p95</strong> is the value below which 95%
+              of trials fall — meaning <strong>1 trial in 20 is slower</strong>.
+              It describes the worst case that real users will still hit
+              regularly.
+            </p>
+            <p className="mt-2">
+              A framework with a good p50 but a bad p95 looks fast on average
+              and intermittently freezes. A framework with both numbers close
+              together is predictable. The gap between them — how far p95 is
+              from p50 — is the more actionable signal than either column alone.
+            </p>
+          </Callout>
           <LatencyStripChart distribution={summary.latency_distribution} />
           <p>
             The strip plot above shows every valid trial as a dot. Most
