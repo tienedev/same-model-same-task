@@ -10,6 +10,7 @@ See docs/plans/2026-05-10-deterministic-scorer-design.md for the rationale.
 
 from __future__ import annotations
 
+import datetime
 import hashlib
 import json
 from pathlib import Path
@@ -111,6 +112,7 @@ def gold_relevance(job_id: str, candidate_id: str) -> int:
         "candidate_id": candidate_id,
         "rel": rel,
         "breakdown": breakdown,
+        "computed_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
     }, ensure_ascii=False))
     return rel
 
