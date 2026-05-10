@@ -142,3 +142,37 @@ class TestDiskCache:
         gr.gold_relevance("job-001", "cand-001")
         mtime_after = files[0].stat().st_mtime_ns
         assert mtime_before == mtime_after, "cache file rewritten on hit"
+
+
+class TestNdcgAt3:
+    def test_perfect_order_is_1(self):
+        from harness.gold_ranking import ndcg_at_3
+        # Agent matches gold exactly: NDCG = 1.0
+        assert ndcg_at_3(agent_rels=[3, 3, 2], gold_rels=[3, 3, 2]) == pytest.approx(1.0)
+
+    def test_all_zeros_in_agent_is_0(self):
+        from harness.gold_ranking import ndcg_at_3
+        # Agent picked 3 irrelevant candidates while gold had 3 relevant ones
+        assert ndcg_at_3(agent_rels=[0, 0, 0], gold_rels=[3, 3, 2]) == pytest.approx(0.0)
+
+    def test_swap_rank1_rank3_strictly_between(self):
+        from harness.gold_ranking import ndcg_at_3
+        # Same items, wrong order — must be strictly between 0 and 1
+        score = ndcg_at_3(agent_rels=[1, 3, 3], gold_rels=[3, 3, 1])
+        assert 0.0 < score < 1.0
+
+    def test_idcg_zero_fallback_returns_1(self):
+        from harness.gold_ranking import ndcg_at_3
+        # Pathological: no relevant candidates in the pool — agent can't fail
+        assert ndcg_at_3(agent_rels=[0, 0, 0], gold_rels=[0, 0, 0]) == 1.0
+
+    def test_log2_discount_shape(self):
+        """DCG@3 with rels=[1,0,0] = 1/log2(2) = 1. With rels=[0,1,0] = 1/log2(3)."""
+        import math
+        from harness.gold_ranking import ndcg_at_3
+        # Both agent and gold have a single rel=1; check the discount math
+        # agent: rel=1 at position 2 → DCG = 1/log2(3) ≈ 0.6309
+        # gold:  rel=1 at position 1 → IDCG = 1/log2(2) = 1.0
+        # NDCG = 0.6309 / 1.0
+        expected = (1 / math.log2(3)) / 1.0
+        assert ndcg_at_3(agent_rels=[0, 1, 0], gold_rels=[1, 0, 0]) == pytest.approx(expected)

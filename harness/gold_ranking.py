@@ -13,6 +13,7 @@ from __future__ import annotations
 import datetime
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -126,3 +127,21 @@ def gold_top_k(job_id: str, k: int = 3) -> list[tuple[str, int]]:
     scored = [(cid, gold_relevance(job_id, cid)) for cid in _candidate_ids()]
     scored.sort(key=lambda x: (-x[1], x[0]))
     return scored[:k]
+
+
+def ndcg_at_3(agent_rels: list[int], gold_rels: list[int]) -> float:
+    """Normalized Discounted Cumulative Gain @ 3.
+
+    DCG = Σ rel_i / log2(i + 2)    (i is 0-indexed; position 1 → log2(2) = 1)
+    IDCG = DCG of the gold's top-3 relevance vector.
+    NDCG = DCG / IDCG, or 1.0 if IDCG == 0 (no relevant candidate exists).
+
+    Both inputs must be length-3 lists of integer relevance values (rel ≥ 0).
+    """
+    def _dcg(rels: list[int]) -> float:
+        return sum(rel / math.log2(i + 2) for i, rel in enumerate(rels))
+
+    idcg = _dcg(gold_rels)
+    if idcg == 0:
+        return 1.0
+    return _dcg(agent_rels) / idcg
