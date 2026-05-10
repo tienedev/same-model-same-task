@@ -9,14 +9,14 @@ A cross-language benchmark of 8 LLM agent frameworks (5 Python + 3 TypeScript) c
 <!-- LEADERBOARD-START -->
 | Framework | Valid | NDCG@3 | Hit@1 | JustifQ /5 [^j] | p50 (s) | p95 (s) | Mean tokens (in/out) | Mean tools | Cost / run (USD) |
 |---|---|---|---|---|---|---|---|---|---|
-| baseline-python | 23/30 | 0.570 | 65.2% | 3.09 | 22.1 | 54.8 | 7027 / 515 | 9.7 | $0.0202 |
-| baseline-typescript | 29/30 | 0.589 | 69.0% | 3.00 | 20.5 | 32.7 | 5897 / 495 | 9.2 | $0.0177 |
-| crewai | 26/30 | 0.598 | 69.2% | 3.27 | 18.7 | 31.6 | 42785 / 1806 | 11.8 | $0.1072 |
-| google-adk | 29/30 | 0.621 | 72.4% | 3.41 | 19.9 | 471.8 | 6128 / 510 | 9.3 | $0.0184 |
-| langgraph | 27/30 | 0.823 | 92.6% | 3.70 | 17.1 | 25.9 | 5167 / 502 | 8.8 | $0.0164 |
-| mastra | 30/30 | 0.610 | 73.3% | 3.37 | 21.5 | 31.9 | 6154 / 548 | 11.2 | $0.0189 |
 | pydantic-ai | 29/30 | 0.857 | 100.0% | 3.41 | 16.2 | 31.5 | 6149 / 480 | 8.4 | $0.0181 |
+| langgraph | 27/30 | 0.823 | 92.6% | 3.70 | 17.1 | 25.9 | 5167 / 502 | 8.8 | $0.0164 |
 | vercel-ai-sdk | 27/30 | 0.662 | 77.8% | 2.89 | 21.2 | 28.4 | 1605 / 228 | 9.1 | $0.0060 |
+| google-adk | 29/30 | 0.621 | 72.4% | 3.41 | 19.9 | 471.8 | 6128 / 510 | 9.3 | $0.0184 |
+| mastra | 30/30 | 0.610 | 73.3% | 3.37 | 21.5 | 31.9 | 6154 / 548 | 11.2 | $0.0189 |
+| crewai | 26/30 | 0.598 | 69.2% | 3.27 | 18.7 | 31.6 | 42785 / 1806 | 11.8 | $0.1072 |
+| baseline-typescript | 29/30 | 0.589 | 69.0% | 3.00 | 20.5 | 32.7 | 5897 / 495 | 9.2 | $0.0177 |
+| baseline-python | 23/30 | 0.570 | 65.2% | 3.09 | 22.1 | 54.8 | 7027 / 515 | 9.7 | $0.0202 |
 
 [^j]: `JustifQ /5` is the LLM-judge's `justification_quality` axis only — the prose readability signal. The previous `/20` sum is preserved in the JSON but no longer surfaced: Gemini judging Gemini exhibits documented self-bias (up to 50% rubric-flip on objective rubrics; Panickssery et al. NeurIPS 2024). Use NDCG@3 + Hit@1 for ranking decisions.
 
@@ -88,9 +88,13 @@ for fw in baseline-python baseline-typescript langgraph crewai pydantic-ai googl
 done
 
 # 6. Score (deterministic NDCG@3 + Hit@1), judge (qualitative), aggregate
-python harness/score_deterministic.py results/headline/*.json   # deterministic scoring, no API calls
-python harness/judge.py results/headline/*.json                  # LLM-judge on valid runs
-python scripts/summarize.py --input results/headline             # aggregate + refresh README
+for f in results/headline/*.json; do
+  python harness/score_deterministic.py "$f"   # deterministic scoring, no API calls
+done
+for f in results/headline/*.json; do
+  python harness/judge.py "$f"                  # LLM-judge on valid runs
+done
+python scripts/summarize.py --input results/headline   # aggregate + refresh leaderboard
 ```
 
 ## Caveats

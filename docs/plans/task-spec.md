@@ -203,7 +203,7 @@ Prompt judge à drafter pendant l'impl du harness, mais structure verrouillée i
 | Tool implémentation | Code déterministe, pas LLM | Reproductibilité, isolation framework overhead |
 | Cap justification | 50 mots max | Réduit variance tokens, force concision |
 | Runs / job | 3 (× 10 jobs) | Compromis variance / généralisation |
-| Judge | Claude Sonnet 4.6 (pas Gemini) | Anti self-judging |
+| Judge | gemini-2.5-flash (defaulted to agent model; original plan was Claude Sonnet 4.6) | Self-bias documented in § 7 update |
 
 ---
 

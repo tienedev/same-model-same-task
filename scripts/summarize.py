@@ -261,6 +261,13 @@ def _build_leaderboard_md(stats: list[dict[str, Any]]) -> str:
     JustifQ /5 is shown as a secondary signal with a footnote on self-bias —
     see the README "Scoring" section for the rationale on demoting the old /20.
     """
+    # Render leaderboard rows sorted by NDCG@3 desc (nulls last) so the
+    # injected README table matches the headline metric. compute_stats()
+    # keeps alphabetical order in summary.json for stable downstream IDs.
+    stats = sorted(
+        stats,
+        key=lambda s: (s.get("mean_ndcg_at_3") is None, -(s.get("mean_ndcg_at_3") or 0)),
+    )
     rows = [
         "| Framework | Valid | NDCG@3 | Hit@1 | JustifQ /5 [^j] | p50 (s) | p95 (s) | Mean tokens (in/out) | Mean tools | Cost / run (USD) |",
         "|---|---|---|---|---|---|---|---|---|---|",
