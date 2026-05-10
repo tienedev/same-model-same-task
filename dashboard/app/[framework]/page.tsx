@@ -114,6 +114,7 @@ export default async function Page({
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           <Stat
             label="NDCG@3"
+            title="Normalized Discounted Cumulative Gain at rank 3. Range 0–1, higher = better. Measures how well the agent's top-3 picks line up with the rule-based gold top-3 (log₂ position discount)."
             value={
               stats.mean_ndcg_at_3 === null
                 ? "—"
@@ -127,6 +128,7 @@ export default async function Page({
           />
           <Stat
             label="Hit@1"
+            title="Fraction of trials where the agent's #1 pick has gold relevance ≥ 2 (Relevant or better)."
             value={
               stats.hit_at_1_rate === null
                 ? "—"
@@ -298,13 +300,15 @@ function Stat({
   label,
   value,
   sub,
+  title,
 }: {
   label: string;
   value: string;
   sub?: string;
+  title?: string;
 }) {
   return (
-    <div className="rounded-xl border border-border/60 p-4">
+    <div className="rounded-xl border border-border/60 p-4" title={title}>
       <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
         {label}
       </div>

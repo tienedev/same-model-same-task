@@ -78,7 +78,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="Leaderboard"
           title="Frameworks ranked by NDCG@3"
-          description={`Higher is better. NDCG@3 is a deterministic IR scorer over graded relevance (range 0–1). Frameworks with no valid runs sort last. Pricing: $${summary.metadata.pricing_usd_per_m_tokens.in_per_m}/M input · $${summary.metadata.pricing_usd_per_m_tokens.out_per_m}/M output tokens.`}
+          description={`NDCG@3 is the standard information-retrieval ranking score (0–1, higher = better): how well the agent's top-3 picks match the rule-based gold top-3. Hit@1 is the % of trials where the agent's #1 pick is at least "Relevant". Hover any column header for a precise definition. Frameworks with no valid runs sort last. Pricing: $${summary.metadata.pricing_usd_per_m_tokens.in_per_m}/M input · $${summary.metadata.pricing_usd_per_m_tokens.out_per_m}/M output tokens.`}
         />
         <Leaderboard stats={summary.frameworks} />
       </section>

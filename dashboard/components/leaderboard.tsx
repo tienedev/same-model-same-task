@@ -92,8 +92,18 @@ export function Leaderboard({ stats }: { stats: FrameworkStats[] }) {
             <TableHead className="w-12 text-center">#</TableHead>
             <TableHead>Framework</TableHead>
             <TableHead className="text-right">Valid</TableHead>
-            <TableHead className="text-right">NDCG@3</TableHead>
-            <TableHead className="text-right">Hit@1</TableHead>
+            <TableHead
+              className="text-right"
+              title="Normalized Discounted Cumulative Gain at rank 3. Range 0–1, higher = better. Measures how well the agent's top-3 picks line up with the rule-based gold top-3 (log₂ position discount)."
+            >
+              NDCG@3
+            </TableHead>
+            <TableHead
+              className="text-right"
+              title="Fraction of trials where the agent's #1 pick has gold relevance ≥ 2 (Relevant or better). 100% = always finds an obviously-good top candidate."
+            >
+              Hit@1
+            </TableHead>
             <TableHead className="text-right">p50 (s)</TableHead>
             <TableHead className="text-right">p95 (s)</TableHead>
             <TableHead className="text-right">Tokens (in / out)</TableHead>

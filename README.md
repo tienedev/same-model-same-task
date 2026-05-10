@@ -6,6 +6,8 @@ A cross-language benchmark of 8 LLM agent frameworks (5 Python + 3 TypeScript) c
 
 ## Leaderboard
 
+> **Reading the columns.** **NDCG@3** is the ranking-quality score from information-retrieval (range 0–1, higher = better): how well the agent's top-3 picks line up with the rule-based gold top-3. **Hit@1** = % of trials where the agent's #1 pick is at least "Relevant" against the rule-based rubric. **JustifQ /5** is the LLM-judge's `justification_quality` axis only (1–5), kept as a soft prose-readability signal — see Caveats § 2 on why the old `/20` rubric was demoted. Full methodology in **§ Scoring** below.
+
 <!-- LEADERBOARD-START -->
 | Framework | Valid | NDCG@3 | Hit@1 | JustifQ /5 [^j] | p50 (s) | p95 (s) | Mean tokens (in/out) | Mean tools | Cost / run (USD) |
 |---|---|---|---|---|---|---|---|---|---|
