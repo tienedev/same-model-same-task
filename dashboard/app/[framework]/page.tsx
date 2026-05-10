@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { FrameworkFindingsCallout } from "@/components/framework-findings-callout";
 import {
   frameworkLabel,
   frameworkLanguage,
@@ -165,6 +166,8 @@ export default async function Page({
           />
         </div>
       </section>
+
+      <FrameworkFindingsCallout framework={framework} />
 
       {/* DETAIL TABLE */}
       <section className="pt-12">
