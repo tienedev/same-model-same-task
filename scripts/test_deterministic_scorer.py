@@ -235,3 +235,79 @@ class TestComputeDeterministicScore:
         }
         result = compute_deterministic_score(parsed_output, "job-001")
         assert result["hit_at_1"] is False
+
+
+class TestScoreDeterministicCli:
+    def _synthetic_results(self):
+        return {
+            "framework": "synthetic-fw",
+            "runs": [
+                {
+                    "framework": "synthetic-fw",
+                    "job_id": "job-001",
+                    "valid": True,
+                    "parsed_output": {
+                        "job_id": "job-001",
+                        "ranked_candidates": [
+                            {"rank": 1, "candidate_id": "cand-001", "score": 100, "justification": "x"},
+                            {"rank": 2, "candidate_id": "cand-003", "score": 50, "justification": "x"},
+                            {"rank": 3, "candidate_id": "cand-023", "score": 33, "justification": "x"},
+                        ],
+                    },
+                },
+                {
+                    "framework": "synthetic-fw",
+                    "job_id": "job-001",
+                    "valid": False,
+                    "parsed_output": None,
+                    "parse_error": "nope",
+                },
+            ],
+        }
+
+    def test_augments_valid_runs_and_skips_invalid(self, tmp_path):
+        import json
+        import subprocess
+        import sys
+
+        p = tmp_path / "results.json"
+        p.write_text(json.dumps(self._synthetic_results()))
+
+        result = subprocess.run(
+            [sys.executable, "harness/score_deterministic.py", str(p)],
+            capture_output=True, text=True, check=False,
+        )
+        assert result.returncode == 0, result.stderr
+
+        data = json.loads(p.read_text())
+        valid = data["runs"][0]
+        invalid = data["runs"][1]
+        assert "deterministic_score" in valid
+        assert valid["deterministic_score"]["hit_at_1"] is True
+        assert "deterministic_score" not in invalid or invalid["deterministic_score"].get("skipped")
+        assert data["deterministic_summary"]["n_scored"] == 1
+        assert data["deterministic_summary"]["n_skipped"] == 1
+
+    def test_idempotence(self, tmp_path):
+        """Running the CLI twice on the same file yields byte-identical output."""
+        import json
+        import subprocess
+        import sys
+
+        p = tmp_path / "results.json"
+        p.write_text(json.dumps(self._synthetic_results()))
+
+        for _ in range(2):
+            r = subprocess.run(
+                [sys.executable, "harness/score_deterministic.py", str(p)],
+                capture_output=True, text=True, check=False,
+            )
+            assert r.returncode == 0
+
+        first_pass = p.read_text()
+        # Run a 3rd time and compare
+        subprocess.run(
+            [sys.executable, "harness/score_deterministic.py", str(p)],
+            capture_output=True, text=True, check=False,
+        )
+        assert p.read_text() == first_pass
