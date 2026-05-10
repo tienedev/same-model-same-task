@@ -24,10 +24,10 @@ export function FrameworkFindingsCallout({ framework }: { framework: string }) {
 
   return (
     <section className="pt-8">
-      <aside className="rounded-xl border border-border/60 bg-muted/30 p-4">
-        <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+      <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
+        <h2 className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
           Discussed in /findings
-        </div>
+        </h2>
         <ul className="mt-2 space-y-1 text-sm">
           {items.map((item) => (
             <li key={item.section}>
@@ -36,12 +36,12 @@ export function FrameworkFindingsCallout({ framework }: { framework: string }) {
                 className="text-foreground/90 underline decoration-muted-foreground/40 underline-offset-2 transition-colors hover:decoration-foreground"
               >
                 {item.label}
+                <span className="ml-1 text-muted-foreground" aria-hidden="true">→</span>
               </Link>
-              <span className="ml-1 text-muted-foreground">→</span>
             </li>
           ))}
         </ul>
-      </aside>
+      </div>
     </section>
   );
 }
