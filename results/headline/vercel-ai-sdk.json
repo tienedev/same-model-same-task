@@ -1,0 +1,1314 @@
+{
+  "framework": "vercel-ai-sdk",
+  "started_at": "2026-05-10T12:59:26.001416+00:00",
+  "total_elapsed_s": 599.064,
+  "runs": [
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-001",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 8.984,
+      "input_tokens": 1336,
+      "output_tokens": 182,
+      "tool_calls": 5,
+      "raw_output": "{\"job_id\": \"job-001\", \"ranked_candidates\": [{\"rank\": 1, \"candidate_id\": \"cand-001\", \"score\": 100, \"justification\": \"Excellent skill match (100%) with Python, strong experience, perfect location fit in Paris, and salary within range.\"}, {\"rank\": 2, \"candidate_id\": \"cand-023\", \"score\": 67, \"justification\": \"Good skill match (67%) with Python, strong experience, perfect location fit in Paris, and salary within range.\"}, {\"rank\": 3, \"candidate_id\": \"cand-036\", \"score\": 33, \"justification\": \"Moderate skill match (33%) with Python, strong experience, perfect location fit in Paris, and salary within range.\"}]}",
+      "parsed_output": {
+        "job_id": "job-001",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-001",
+            "score": 100,
+            "justification": "Excellent skill match (100%) with Python, strong experience, perfect location fit in Paris, and salary within range."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-023",
+            "score": 67,
+            "justification": "Good skill match (67%) with Python, strong experience, perfect location fit in Paris, and salary within range."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-036",
+            "score": 33,
+            "justification": "Moderate skill match (33%) with Python, strong experience, perfect location fit in Paris, and salary within range."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 3,
+        "score_coherence": 4,
+        "justification_quality": 3,
+        "format": 5,
+        "comment": "The agent correctly identified the top candidate and used a clear scoring mechanism, but failed to adequately filter for the specific engineering discipline, leading to a poor third-place candidate.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1321,
+        "judge_output_tokens": 87
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-001",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 13.904,
+      "input_tokens": 1337,
+      "output_tokens": 225,
+      "tool_calls": 5,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-001\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 100,\n      \"justification\": \"Excellent match with 100% skill match, fitting experience, location, and salary requirements.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-023\",\n      \"score\": 80,\n      \"justification\": \"Good match with 67% skill match, fitting experience, location, and salary requirements.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-036\",\n      \"score\": 60,\n      \"justification\": \"Decent match with 33% skill match, fitting experience, location, and salary requirements.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-001",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-001",
+            "score": 100,
+            "justification": "Excellent match with 100% skill match, fitting experience, location, and salary requirements."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-023",
+            "score": 80,
+            "justification": "Good match with 67% skill match, fitting experience, location, and salary requirements."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-036",
+            "score": 60,
+            "justification": "Decent match with 33% skill match, fitting experience, location, and salary requirements."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 4,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified the top candidate and maintained score coherence, but failed to provide sufficiently detailed justifications, especially regarding the fundamental role mismatch for the third-ranked candidate.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1307,
+        "judge_output_tokens": 86
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-001",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 10.668,
+      "input_tokens": 1337,
+      "output_tokens": 225,
+      "tool_calls": 5,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-001\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 100,\n      \"justification\": \"Excellent match with 100% skill match, fitting experience, location, and salary requirements.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-023\",\n      \"score\": 80,\n      \"justification\": \"Good match with 67% skill match, fitting experience, location, and salary requirements.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-036\",\n      \"score\": 60,\n      \"justification\": \"Decent match with 33% skill match, fitting experience, location, and salary requirements.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-001",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-001",
+            "score": 100,
+            "justification": "Excellent match with 100% skill match, fitting experience, location, and salary requirements."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-023",
+            "score": 80,
+            "justification": "Good match with 67% skill match, fitting experience, location, and salary requirements."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-036",
+            "score": 60,
+            "justification": "Decent match with 33% skill match, fitting experience, location, and salary requirements."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 4,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified the top candidate and maintained score coherence, but failed to provide sufficiently detailed justifications, especially regarding the fundamental role mismatch for the third-ranked candidate.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1307,
+        "judge_output_tokens": 86,
+        "from_cache": true
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-002",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 10.241,
+      "input_tokens": 1328,
+      "output_tokens": 244,
+      "tool_calls": 5,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-002\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-005\",\n      \"score\": 100,\n      \"justification\": \"Excellent match with 100% skill alignment, fitting experience, location in Lyon, and salary expectations within range.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-002\",\n      \"score\": 25,\n      \"justification\": \"Good fit for experience, location, and salary, but lacks the required Node.js skills for this role (0% skill match).\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-039\",\n      \"score\": 25,\n      \"justification\": \"Good fit for experience, location, and salary, but lacks the required Node.js skills for this role (0% skill match).\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-002",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-005",
+            "score": 100,
+            "justification": "Excellent match with 100% skill alignment, fitting experience, location in Lyon, and salary expectations within range."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-002",
+            "score": 25,
+            "justification": "Good fit for experience, location, and salary, but lacks the required Node.js skills for this role (0% skill match)."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-039",
+            "score": 25,
+            "justification": "Good fit for experience, location, and salary, but lacks the required Node.js skills for this role (0% skill match)."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 4,
+        "score_coherence": 5,
+        "justification_quality": 3,
+        "format": 5,
+        "comment": "The agent excelled at identifying the ideal candidate and their strengths, but its justification for the DevOps candidate missed the fundamental role type mismatch, focusing only on skill gaps.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1256,
+        "judge_output_tokens": 85
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-002",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 12.955,
+      "input_tokens": 1777,
+      "output_tokens": 238,
+      "tool_calls": 8,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-002\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-005\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (Node.js, TypeScript), experience fit, location fit, and salary fit make this candidate a perfect match for the role.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-002\",\n      \"score\": 30,\n      \"justification\": \"Good experience, location, and salary fit, but lacks Node.js skills, being a Python developer.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-039\",\n      \"score\": 30,\n      \"justification\": \"Good experience, location, and salary fit, but lacks Node.js skills and is primarily a DevOps engineer.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-002",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-005",
+            "score": 100,
+            "justification": "Excellent skill match (Node.js, TypeScript), experience fit, location fit, and salary fit make this candidate a perfect match for the role."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-002",
+            "score": 30,
+            "justification": "Good experience, location, and salary fit, but lacks Node.js skills, being a Python developer."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-039",
+            "score": 30,
+            "justification": "Good experience, location, and salary fit, but lacks Node.js skills and is primarily a DevOps engineer."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 5,
+        "score_coherence": 5,
+        "justification_quality": 5,
+        "format": 5,
+        "comment": "The agent provided excellent, actionable justifications that clearly highlight the strengths and weaknesses of each candidate relative to the job requirements.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1250,
+        "judge_output_tokens": 76
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-002",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 16.385,
+      "input_tokens": 1777,
+      "output_tokens": 263,
+      "tool_calls": 8,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-002\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-005\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (Node.js), good experience, and perfect fit for location and salary. All criteria are a perfect match for the role.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-002\",\n      \"score\": 50,\n      \"justification\": \"Strong experience, location, and salary fit. However, the candidate's skills are Python-focused, resulting in a 0% skill match for Node.js.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-039\",\n      \"score\": 50,\n      \"justification\": \"Good experience, location, and salary fit. However, the candidate's skills are in DevOps, resulting in a 0% skill match for Node.js backend.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-002",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-005",
+            "score": 100,
+            "justification": "Excellent skill match (Node.js), good experience, and perfect fit for location and salary. All criteria are a perfect match for the role."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-002",
+            "score": 50,
+            "justification": "Strong experience, location, and salary fit. However, the candidate's skills are Python-focused, resulting in a 0% skill match for Node.js."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-039",
+            "score": 50,
+            "justification": "Good experience, location, and salary fit. However, the candidate's skills are in DevOps, resulting in a 0% skill match for Node.js backend."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 2,
+        "justification_quality": 4,
+        "format": 5,
+        "comment": "The agent provides clear and actionable justifications for each candidate, but its scoring and ranking for candidates with zero core skill match are not coherent with the job's primary requirements.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1275,
+        "judge_output_tokens": 87
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-003",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 25.408,
+      "input_tokens": 1621,
+      "output_tokens": 221,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-003\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-013\",\n      \"score\": 98,\n      \"justification\": \"Excellent skill match (100%), salary in range, remote compatible, and experience fit.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 98,\n      \"justification\": \"Excellent skill match (100%), salary in range, remote compatible, and experience fit.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-016\",\n      \"score\": 78,\n      \"justification\": \"Good skill match (67%), salary in range, remote compatible, and experience fit.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-003",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-013",
+            "score": 98,
+            "justification": "Excellent skill match (100%), salary in range, remote compatible, and experience fit."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-014",
+            "score": 98,
+            "justification": "Excellent skill match (100%), salary in range, remote compatible, and experience fit."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-016",
+            "score": 78,
+            "justification": "Good skill match (67%), salary in range, remote compatible, and experience fit."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 2,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified two strong candidates but failed to differentiate between them and made a critical error by including a candidate missing a core required skill in the top three.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1237,
+        "judge_output_tokens": 85
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-003",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 29.254,
+      "input_tokens": 1621,
+      "output_tokens": 221,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-003\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-013\",\n      \"score\": 98,\n      \"justification\": \"Excellent skill match (100%), salary in range, remote compatible, and experience fit.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 98,\n      \"justification\": \"Excellent skill match (100%), salary in range, remote compatible, and experience fit.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-016\",\n      \"score\": 78,\n      \"justification\": \"Good skill match (67%), salary in range, remote compatible, and experience fit.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-003",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-013",
+            "score": 98,
+            "justification": "Excellent skill match (100%), salary in range, remote compatible, and experience fit."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-014",
+            "score": 98,
+            "justification": "Excellent skill match (100%), salary in range, remote compatible, and experience fit."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-016",
+            "score": 78,
+            "justification": "Good skill match (67%), salary in range, remote compatible, and experience fit."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 2,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified two strong candidates but failed to differentiate between them and made a critical error by including a candidate missing a core required skill in the top three.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1237,
+        "judge_output_tokens": 85,
+        "from_cache": true
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-003",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 22.701,
+      "input_tokens": 1621,
+      "output_tokens": 223,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-003\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-013\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100%), good experience, remote compatible, and salary in range.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100%), good experience, remote compatible, and salary in range.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-016\",\n      \"score\": 76,\n      \"justification\": \"Strong skill match (67%), good experience, remote compatible, and salary in range.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-003",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-013",
+            "score": 100,
+            "justification": "Excellent skill match (100%), good experience, remote compatible, and salary in range."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-014",
+            "score": 100,
+            "justification": "Excellent skill match (100%), good experience, remote compatible, and salary in range."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-016",
+            "score": 76,
+            "justification": "Strong skill match (67%), good experience, remote compatible, and salary in range."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 3,
+        "score_coherence": 2,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified the top two candidates but failed to differentiate between them and critically missed the absence of a required skill for the third-ranked candidate.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1239,
+        "judge_output_tokens": 83
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-004",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 23.365,
+      "input_tokens": 1618,
+      "output_tokens": 224,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-004\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 95,\n      \"justification\": \"Excellent skill match (50%), perfect experience, location, and salary fit.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-016\",\n      \"score\": 85,\n      \"justification\": \"Strong skill match (50%), perfect experience and salary fit, with remote compatibility for location.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-013\",\n      \"score\": 75,\n      \"justification\": \"Good skill match (50%) and in-range salary, but experience is slightly under and location is remote compatible.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-004",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-014",
+            "score": 95,
+            "justification": "Excellent skill match (50%), perfect experience, location, and salary fit."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-016",
+            "score": 85,
+            "justification": "Strong skill match (50%), perfect experience and salary fit, with remote compatibility for location."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-013",
+            "score": 75,
+            "justification": "Good skill match (50%) and in-range salary, but experience is slightly under and location is remote compatible."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 1,
+        "score_coherence": 1,
+        "justification_quality": 1,
+        "format": 5,
+        "comment": "The agent fundamentally failed to identify the critical absence of required backend skills (Python, FastAPI) for a full-stack role, rendering the rankings and justifications highly misleading.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1244,
+        "judge_output_tokens": 86
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-004",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 22.335,
+      "input_tokens": 1768,
+      "output_tokens": 243,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-004\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-023\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100%), perfect experience, location, and salary fit for the Senior Full-Stack Engineer role in Paris.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 80,\n      \"justification\": \"Good skill match (50%), with perfect experience, location, and salary fit for the Senior Full-Stack Engineer role.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-029\",\n      \"score\": 60,\n      \"justification\": \"Good skill match (50%) and location fit, but is overqualified and salary is above the maximum for the role.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-004",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-023",
+            "score": 100,
+            "justification": "Excellent skill match (100%), perfect experience, location, and salary fit for the Senior Full-Stack Engineer role in Paris."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-014",
+            "score": 80,
+            "justification": "Good skill match (50%), with perfect experience, location, and salary fit for the Senior Full-Stack Engineer role."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-029",
+            "score": 60,
+            "justification": "Good skill match (50%) and location fit, but is overqualified and salary is above the maximum for the role."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 3,
+        "score_coherence": 2,
+        "justification_quality": 4,
+        "format": 5,
+        "comment": "The agent accurately identified the best candidate and provided clear justifications, but the scoring for less suitable candidates was not entirely coherent with the identified mismatches.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1323,
+        "judge_output_tokens": 82
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-004",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 25.189,
+      "input_tokens": 1768,
+      "output_tokens": 217,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-004\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-023\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100%), experience, location, and salary fit.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 67,\n      \"justification\": \"Good skill match (50%), experience, location, and salary fit.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 50,\n      \"justification\": \"Good experience, location, and salary fit, but skills are a bit low (25%).\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-004",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-023",
+            "score": 100,
+            "justification": "Excellent skill match (100%), experience, location, and salary fit."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-014",
+            "score": 67,
+            "justification": "Good skill match (50%), experience, location, and salary fit."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-001",
+            "score": 50,
+            "justification": "Good experience, location, and salary fit, but skills are a bit low (25%)."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 5,
+        "score_coherence": 4,
+        "justification_quality": 3,
+        "format": 5,
+        "comment": "The agent excels at identifying the best-fit candidate and overall ranking, but the justifications for candidates with skill gaps could be more specific.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1291,
+        "judge_output_tokens": 80
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-005",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 14.826,
+      "input_tokens": 1510,
+      "output_tokens": 253,
+      "tool_calls": 8,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-005\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-031\",\n      \"score\": 100,\n      \"justification\": \"Excellent match with 100% skill match, perfect experience, location, and salary fit for the Machine Learning Engineer role in Berlin, Germany.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-034\",\n      \"score\": 33,\n      \"justification\": \"Good match with 33% skill match, perfect experience, location, and salary fit for the Machine Learning Engineer role in Berlin, Germany.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-007\",\n      \"score\": 0,\n      \"justification\": \"Basic match with 0% skill match, but perfect experience, location, and salary fit for the Machine Learning Engineer role in Berlin, Germany.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-005",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-031",
+            "score": 100,
+            "justification": "Excellent match with 100% skill match, perfect experience, location, and salary fit for the Machine Learning Engineer role in Berlin, Germany."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-034",
+            "score": 33,
+            "justification": "Good match with 33% skill match, perfect experience, location, and salary fit for the Machine Learning Engineer role in Berlin, Germany."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-007",
+            "score": 0,
+            "justification": "Basic match with 0% skill match, but perfect experience, location, and salary fit for the Machine Learning Engineer role in Berlin, Germany."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 5,
+        "justification_quality": 4,
+        "format": 5,
+        "comment": "The agent provides numerically coherent scores and specific skill match percentages, but struggles to filter out candidates with no relevant skills for a specialized role.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1257,
+        "judge_output_tokens": 80
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-005",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 21.227,
+      "input_tokens": 1510,
+      "output_tokens": 215,
+      "tool_calls": 8,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-005\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-031\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100%), perfect experience, location, and salary fit.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-034\",\n      \"score\": 63,\n      \"justification\": \"Moderate skill match (33%), perfect experience, location, and salary fit.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-007\",\n      \"score\": 30,\n      \"justification\": \"No skill match (0%), but good experience, location, and salary fit.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-005",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-031",
+            "score": 100,
+            "justification": "Excellent skill match (100%), perfect experience, location, and salary fit."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-034",
+            "score": 63,
+            "justification": "Moderate skill match (33%), perfect experience, location, and salary fit."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-007",
+            "score": 30,
+            "justification": "No skill match (0%), but good experience, location, and salary fit."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 4,
+        "score_coherence": 5,
+        "justification_quality": 5,
+        "format": 5,
+        "comment": "The agent provides highly coherent scores with specific, actionable justifications, particularly regarding skill match percentages.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1219,
+        "judge_output_tokens": 71
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-005",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 26.518,
+      "input_tokens": 1969,
+      "output_tokens": 240,
+      "tool_calls": 14,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-005\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 63,\n      \"justification\": \"Strong skill match (33%) and ideal experience fit, with salary in range. However, location is a mismatch for Berlin.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-003\",\n      \"score\": 53,\n      \"justification\": \"Good skill match (33%) and salary in range, but experience is slightly overqualified and location is a mismatch.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-007\",\n      \"score\": 50,\n      \"justification\": \"Excellent fit for both experience and location, with salary in range. However, there is no direct skill match for Machine Learning.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-005",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-001",
+            "score": 63,
+            "justification": "Strong skill match (33%) and ideal experience fit, with salary in range. However, location is a mismatch for Berlin."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-003",
+            "score": 53,
+            "justification": "Good skill match (33%) and salary in range, but experience is slightly overqualified and location is a mismatch."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-007",
+            "score": 50,
+            "justification": "Excellent fit for both experience and location, with salary in range. However, there is no direct skill match for Machine Learning."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 3,
+        "justification_quality": 3,
+        "format": 5,
+        "comment": "The agent's weakest aspect is its failure to adequately prioritize the critical machine learning skill requirements (PyTorch, MLOps) over general programming language presence (Python).",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1332,
+        "judge_output_tokens": 87
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-006",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 14.404,
+      "input_tokens": 1147,
+      "output_tokens": 0,
+      "tool_calls": 3,
+      "raw_output": "",
+      "parsed_output": null,
+      "parse_error": "SyntaxError: JSON Parse error: Unexpected EOF",
+      "trial": 1,
+      "valid": false,
+      "judgment": {
+        "skipped": true,
+        "reason": "invalid"
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-006",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 21.815,
+      "input_tokens": 1896,
+      "output_tokens": 250,
+      "tool_calls": 10,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-006\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-037\",\n      \"score\": 95,\n      \"justification\": \"Excellent skill match (100%), experience fit, and salary fit. Location is also perfectly compatible for a remote EU role.\"\n    ,\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-039\",\n      \"score\": 75,\n      \"justification\": \"Good skill match (67%) and experience fit. Location is remote compatible. Salary is below the minimum, which might be a point of negotiation.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-041\",\n      \"score\": 65,\n      \"justification\": \"Good skill match (67%) and remote compatible location. However, experience is slightly under the job requirements, and salary is below the minimum.\"\n    }\n  ]\n}\n```",
+      "parsed_output": null,
+      "parse_error": "SyntaxError: JSON Parse error: Property name must be a string literal",
+      "trial": 2,
+      "valid": false,
+      "judgment": {
+        "skipped": true,
+        "reason": "invalid"
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-006",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 13.976,
+      "input_tokens": 1147,
+      "output_tokens": 0,
+      "tool_calls": 3,
+      "raw_output": "",
+      "parsed_output": null,
+      "parse_error": "SyntaxError: JSON Parse error: Unexpected EOF",
+      "trial": 3,
+      "valid": false,
+      "judgment": {
+        "skipped": true,
+        "reason": "invalid"
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-007",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 24.722,
+      "input_tokens": 1732,
+      "output_tokens": 248,
+      "tool_calls": 10,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-007\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-042\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100%), experience, location, and salary fit make this candidate a perfect match for the Senior iOS Engineer role.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 43,\n      \"justification\": \"Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 43,\n      \"justification\": \"Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-007",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-042",
+            "score": 100,
+            "justification": "Excellent skill match (100%), experience, location, and salary fit make this candidate a perfect match for the Senior iOS Engineer role."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-001",
+            "score": 43,
+            "justification": "Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-014",
+            "score": 43,
+            "justification": "Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 1,
+        "score_coherence": 2,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified the top candidate but severely failed by ranking completely irrelevant candidates with high scores and impractical justifications for a senior role.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1297,
+        "judge_output_tokens": 79
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-007",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 23.668,
+      "input_tokens": 1732,
+      "output_tokens": 248,
+      "tool_calls": 10,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-007\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-042\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100%), experience, location, and salary fit make this candidate a perfect match for the Senior iOS Engineer role.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 43,\n      \"justification\": \"Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 43,\n      \"justification\": \"Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-007",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-042",
+            "score": 100,
+            "justification": "Excellent skill match (100%), experience, location, and salary fit make this candidate a perfect match for the Senior iOS Engineer role."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-001",
+            "score": 43,
+            "justification": "Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-014",
+            "score": 43,
+            "justification": "Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 1,
+        "score_coherence": 2,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified the top candidate but severely failed by ranking completely irrelevant candidates with high scores and impractical justifications for a senior role.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1297,
+        "judge_output_tokens": 79,
+        "from_cache": true
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-007",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 21.937,
+      "input_tokens": 1732,
+      "output_tokens": 248,
+      "tool_calls": 10,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-007\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-042\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100%), experience, location, and salary fit make this candidate a perfect match for the Senior iOS Engineer role.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 43,\n      \"justification\": \"Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 43,\n      \"justification\": \"Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-007",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-042",
+            "score": 100,
+            "justification": "Excellent skill match (100%), experience, location, and salary fit make this candidate a perfect match for the Senior iOS Engineer role."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-001",
+            "score": 43,
+            "justification": "Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-014",
+            "score": 43,
+            "justification": "Good experience, location, and salary fit, but lacks specific iOS engineering skills. Could be a good candidate if upskilled in iOS."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 1,
+        "score_coherence": 2,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified the top candidate but severely failed by ranking completely irrelevant candidates with high scores and impractical justifications for a senior role.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1297,
+        "judge_output_tokens": 79,
+        "from_cache": true
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-008",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 22.669,
+      "input_tokens": 1399,
+      "output_tokens": 172,
+      "tool_calls": 6,
+      "raw_output": "{\"job_id\": \"job-008\", \"ranked_candidates\": [{\"rank\": 1, \"candidate_id\": \"cand-047\", \"score\": 100, \"justification\": \"Excellent match with 100% skill match, appropriate experience, matching location, and salary within range.\"}, {\"rank\": 2, \"candidate_id\": \"cand-025\", \"score\": 28, \"justification\": \"Good experience, location, and salary fit, but a significant skill mismatch (0% skill match).\"}, {\"rank\": 3, \"candidate_id\": \"cand-032\", \"score\": 28, \"justification\": \"Good experience, location, and salary fit, but a significant skill mismatch (0% skill match).\"}]}",
+      "parsed_output": {
+        "job_id": "job-008",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-047",
+            "score": 100,
+            "justification": "Excellent match with 100% skill match, appropriate experience, matching location, and salary within range."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-025",
+            "score": 28,
+            "justification": "Good experience, location, and salary fit, but a significant skill mismatch (0% skill match)."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-032",
+            "score": 28,
+            "justification": "Good experience, location, and salary fit, but a significant skill mismatch (0% skill match)."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 2,
+        "justification_quality": 4,
+        "format": 5,
+        "comment": "The justifications are specific and actionable, clearly highlighting the reasons for each candidate's score, but the ranking of candidates with 0% skill match in the top 3 is a significant flaw.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1237,
+        "judge_output_tokens": 92
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-008",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 19.699,
+      "input_tokens": 1611,
+      "output_tokens": 155,
+      "tool_calls": 11,
+      "raw_output": "{\"job_id\": \"job-008\", \"ranked_candidates\": [{\"rank\": 1, \"candidate_id\": \"cand-001\", \"score\": 100, \"justification\": \"Excellent match in experience, location, and salary for the job requirements.\"}, {\"rank\": 2, \"candidate_id\": \"cand-014\", \"score\": 100, \"justification\": \"Excellent match in experience, location, and salary for the job requirements.\"}, {\"rank\": 3, \"candidate_id\": \"cand-005\", \"score\": 89, \"justification\": \"Good match in experience and salary, with remote compatibility for the job's location.\"}]}",
+      "parsed_output": {
+        "job_id": "job-008",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-001",
+            "score": 100,
+            "justification": "Excellent match in experience, location, and salary for the job requirements."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-014",
+            "score": 100,
+            "justification": "Excellent match in experience, location, and salary for the job requirements."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-005",
+            "score": 89,
+            "justification": "Good match in experience and salary, with remote compatibility for the job's location."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 1,
+        "score_coherence": 1,
+        "justification_quality": 1,
+        "format": 5,
+        "comment": "The agent completely failed to match candidates based on core job skills, leading to a ranking of entirely irrelevant profiles.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1261,
+        "judge_output_tokens": 75
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-008",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 18.655,
+      "input_tokens": 1399,
+      "output_tokens": 237,
+      "tool_calls": 6,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-008\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-047\",\n      \"score\": 100,\n      \"justification\": \"Perfect match with 100% skill match, ideal experience, location, and salary fit for the Product Designer role.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-025\",\n      \"score\": 50,\n      \"justification\": \"Good fit for experience, location, and salary. However, there is no skill match for the Product Designer position.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-032\",\n      \"score\": 50,\n      \"justification\": \"Good fit for experience, location, and salary. However, there is no skill match for the Product Designer position.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-008",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-047",
+            "score": 100,
+            "justification": "Perfect match with 100% skill match, ideal experience, location, and salary fit for the Product Designer role."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-025",
+            "score": 50,
+            "justification": "Good fit for experience, location, and salary. However, there is no skill match for the Product Designer position."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-032",
+            "score": 50,
+            "justification": "Good fit for experience, location, and salary. However, there is no skill match for the Product Designer position."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 1,
+        "score_coherence": 2,
+        "justification_quality": 4,
+        "format": 5,
+        "comment": "The strongest aspect is the clear and specific justifications for each candidate, while the weakest is the agent's inability to correctly weigh the importance of core skills, leading to highly irrelevant candidates being ranked and scored too high.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1246,
+        "judge_output_tokens": 96
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-009",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 16.201,
+      "input_tokens": 1625,
+      "output_tokens": 231,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-009\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-005\",\n      \"score\": 80,\n      \"justification\": \"Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-007\",\n      \"score\": 80,\n      \"justification\": \"Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 70,\n      \"justification\": \"Good 50% skill match, salary in range, and remote compatible. However, experience is under.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-009",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-005",
+            "score": 80,
+            "justification": "Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-007",
+            "score": 80,
+            "justification": "Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-014",
+            "score": 70,
+            "justification": "Good 50% skill match, salary in range, and remote compatible. However, experience is under."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 2,
+        "justification_quality": 3,
+        "format": 5,
+        "comment": "The agent correctly identified key mismatches in experience and salary but failed to adequately assess the 'full-stack' requirement and missed important nice-to-have skills for one candidate, leading to incoherent scoring.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1243,
+        "judge_output_tokens": 94
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-009",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 15.619,
+      "input_tokens": 1625,
+      "output_tokens": 231,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-009\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-005\",\n      \"score\": 80,\n      \"justification\": \"Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-007\",\n      \"score\": 80,\n      \"justification\": \"Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 70,\n      \"justification\": \"Good 50% skill match, salary in range, and remote compatible. However, experience is under.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-009",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-005",
+            "score": 80,
+            "justification": "Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-007",
+            "score": 80,
+            "justification": "Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-014",
+            "score": 70,
+            "justification": "Good 50% skill match, salary in range, and remote compatible. However, experience is under."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 2,
+        "justification_quality": 3,
+        "format": 5,
+        "comment": "The agent correctly identified key mismatches in experience and salary but failed to adequately assess the 'full-stack' requirement and missed important nice-to-have skills for one candidate, leading to incoherent scoring.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1243,
+        "judge_output_tokens": 94,
+        "from_cache": true
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-009",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 15.258,
+      "input_tokens": 1625,
+      "output_tokens": 231,
+      "tool_calls": 11,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-009\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-005\",\n      \"score\": 80,\n      \"justification\": \"Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-007\",\n      \"score\": 80,\n      \"justification\": \"Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-014\",\n      \"score\": 70,\n      \"justification\": \"Good 50% skill match, salary in range, and remote compatible. However, experience is under.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-009",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-005",
+            "score": 80,
+            "justification": "Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-007",
+            "score": 80,
+            "justification": "Strong 75% skill match and remote compatible. However, experience is under and salary is below minimum."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-014",
+            "score": 70,
+            "justification": "Good 50% skill match, salary in range, and remote compatible. However, experience is under."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 2,
+        "justification_quality": 3,
+        "format": 5,
+        "comment": "The agent correctly identified key mismatches in experience and salary but failed to adequately assess the 'full-stack' requirement and missed important nice-to-have skills for one candidate, leading to incoherent scoring.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1243,
+        "judge_output_tokens": 94,
+        "from_cache": true
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-010",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 45.544,
+      "input_tokens": 1971,
+      "output_tokens": 251,
+      "tool_calls": 13,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-010\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-004\",\n      \"score\": 100,\n      \"justification\": \"Excellent skill match (100% Python), perfect experience fit for a junior role, ideal location in Bordeaux, and salary within range.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-028\",\n      \"score\": 70,\n      \"justification\": \"Good experience and location fit for Bordeaux, but skills are 50% matching and the requested salary is above the maximum for this role.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 60,\n      \"justification\": \"Strong Python skills (100%), but overqualified for a junior role, has a location mismatch, and requests a salary above the maximum.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-010",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-004",
+            "score": 100,
+            "justification": "Excellent skill match (100% Python), perfect experience fit for a junior role, ideal location in Bordeaux, and salary within range."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-028",
+            "score": 70,
+            "justification": "Good experience and location fit for Bordeaux, but skills are 50% matching and the requested salary is above the maximum for this role."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-001",
+            "score": 60,
+            "justification": "Strong Python skills (100%), but overqualified for a junior role, has a location mismatch, and requests a salary above the maximum."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 1,
+      "valid": true,
+      "judgment": {
+        "relevance": 5,
+        "score_coherence": 5,
+        "justification_quality": 3,
+        "format": 5,
+        "comment": "The agent provided an excellent ranking and coherent scores, but consistently overlooked the critical onsite requirement mismatch for two candidates.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1306,
+        "judge_output_tokens": 75
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-010",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 23.74,
+      "input_tokens": 1583,
+      "output_tokens": 234,
+      "tool_calls": 8,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-010\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-004\",\n      \"score\": 100,\n      \"justification\": \"Excellent match in Python skills, experience, location (Bordeaux, France), and salary expectations.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-028\",\n      \"score\": 70,\n      \"justification\": \"Good match in experience and location (Bordeaux, France), but only 50% skill match and salary is above the maximum.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-001\",\n      \"score\": 60,\n      \"justification\": \"Strong Python skills, but overqualified, location mismatch, and salary is above the maximum for this junior role.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-010",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-004",
+            "score": 100,
+            "justification": "Excellent match in Python skills, experience, location (Bordeaux, France), and salary expectations."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-028",
+            "score": 70,
+            "justification": "Good match in experience and location (Bordeaux, France), but only 50% skill match and salary is above the maximum."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-001",
+            "score": 60,
+            "justification": "Strong Python skills, but overqualified, location mismatch, and salary is above the maximum for this junior role."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 2,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 3,
+        "justification_quality": 4,
+        "format": 5,
+        "comment": "The strongest aspect is the adherence to the specified output format and the clarity of the justifications, while the weakest is the low relevance of the second and third ranked candidates due to critical mismatches (missing required skills, location, overqualification) that a human recruiter would likely filter out earlier.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1289,
+        "judge_output_tokens": 110
+      }
+    },
+    {
+      "framework": "vercel-ai-sdk",
+      "job_id": "job-010",
+      "model": "gemini-2.5-flash",
+      "elapsed_s": 15.165,
+      "input_tokens": 1410,
+      "output_tokens": 247,
+      "tool_calls": 6,
+      "raw_output": "```json\n{\n  \"job_id\": \"job-010\",\n  \"ranked_candidates\": [\n    {\n      \"rank\": 1,\n      \"candidate_id\": \"cand-004\",\n      \"score\": 95,\n      \"justification\": \"Excellent match with 100% skill match, perfect experience fit for a junior role, ideal location, and salary within range.\"\n    },\n    {\n      \"rank\": 2,\n      \"candidate_id\": \"cand-028\",\n      \"score\": 70,\n      \"justification\": \"Good match with relevant experience and location. However, skill match is 50% and salary is above the maximum for the role.\"\n    },\n    {\n      \"rank\": 3,\n      \"candidate_id\": \"cand-002\",\n      \"score\": 60,\n      \"justification\": \"Strong skill match (100%) and appropriate experience. However, location is a mismatch and salary is above the maximum for the role.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "job_id": "job-010",
+        "ranked_candidates": [
+          {
+            "rank": 1,
+            "candidate_id": "cand-004",
+            "score": 95,
+            "justification": "Excellent match with 100% skill match, perfect experience fit for a junior role, ideal location, and salary within range."
+          },
+          {
+            "rank": 2,
+            "candidate_id": "cand-028",
+            "score": 70,
+            "justification": "Good match with relevant experience and location. However, skill match is 50% and salary is above the maximum for the role."
+          },
+          {
+            "rank": 3,
+            "candidate_id": "cand-002",
+            "score": 60,
+            "justification": "Strong skill match (100%) and appropriate experience. However, location is a mismatch and salary is above the maximum for the role."
+          }
+        ]
+      },
+      "parse_error": null,
+      "trial": 3,
+      "valid": true,
+      "judgment": {
+        "relevance": 2,
+        "score_coherence": 1,
+        "justification_quality": 2,
+        "format": 5,
+        "comment": "The agent correctly identified the top candidate but made critical errors in assessing skill matches for the lower-ranked candidates, particularly regarding the required Django skill, which significantly impacts the relevance and coherence of the ranking and justifications.",
+        "judge_model": "gemini-2.5-flash",
+        "judge_input_tokens": 1253,
+        "judge_output_tokens": 95
+      }
+    }
+  ],
+  "judge_summary": {
+    "judged": 27,
+    "skipped": 3,
+    "judge_model": "gemini-2.5-flash"
+  }
+}
