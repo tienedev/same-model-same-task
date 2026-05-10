@@ -77,8 +77,8 @@ export default function Home() {
       <section className="space-y-4 pt-12">
         <SectionHeader
           eyebrow="Leaderboard"
-          title="Frameworks ranked by latency p50"
-          description={`Lower is faster. Frameworks with no valid runs sort last. Pricing: $${summary.metadata.pricing_usd_per_m_tokens.in_per_m}/M input · $${summary.metadata.pricing_usd_per_m_tokens.out_per_m}/M output tokens.`}
+          title="Frameworks ranked by judge score"
+          description={`Higher is better. Frameworks with no valid runs sort last. Pricing: $${summary.metadata.pricing_usd_per_m_tokens.in_per_m}/M input · $${summary.metadata.pricing_usd_per_m_tokens.out_per_m}/M output tokens.`}
         />
         <Leaderboard stats={summary.frameworks} />
       </section>
