@@ -1,0 +1,756 @@
+[
+  {
+    "id": "cand-001",
+    "name": "Marie Dubois",
+    "current_title": "Senior Backend Engineer",
+    "skills": ["Python", "Django", "PostgreSQL", "Docker", "AWS", "Stripe API"],
+    "years_experience": 6,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Backend engineer with 6 years in fintech, focused on scalable APIs. Led monolith-to-microservices migration.",
+    "availability": "1 month",
+    "expected_salary_eur": 70000,
+    "previous_roles": [
+      {"title": "Backend Engineer", "company": "PayLogic", "years": 3},
+      {"title": "Junior Developer", "company": "WebStart", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-002",
+    "name": "Thomas Martin",
+    "current_title": "Backend Developer",
+    "skills": ["Python", "Flask", "MySQL", "Redis", "RabbitMQ"],
+    "years_experience": 4,
+    "location": "Lyon, France",
+    "remote_ok": true,
+    "bio": "Python backend dev with focus on async processing and microservices in Flask.",
+    "availability": "immediate",
+    "expected_salary_eur": 52000,
+    "previous_roles": [
+      {"title": "Backend Developer", "company": "DataPipe", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-003",
+    "name": "Lucas Bernard",
+    "current_title": "Staff Backend Engineer",
+    "skills": ["Python", "Django", "PostgreSQL", "Kubernetes", "AWS", "Terraform"],
+    "years_experience": 9,
+    "location": "Remote (France)",
+    "remote_ok": true,
+    "bio": "Staff engineer with deep Django/Postgres expertise. Built payments systems at two scale-ups.",
+    "availability": "3 months",
+    "expected_salary_eur": 95000,
+    "previous_roles": [
+      {"title": "Senior Backend Engineer", "company": "ScaleUpFR", "years": 4},
+      {"title": "Backend Engineer", "company": "FintechCo", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-004",
+    "name": "Antoine Leroy",
+    "current_title": "Junior Backend Developer",
+    "skills": ["Python", "Django", "PostgreSQL", "Git"],
+    "years_experience": 1,
+    "location": "Bordeaux, France",
+    "remote_ok": false,
+    "bio": "Recent bootcamp graduate, 1 year of professional Python/Django. Looking for senior mentorship.",
+    "availability": "immediate",
+    "expected_salary_eur": 38000,
+    "previous_roles": [
+      {"title": "Backend Intern", "company": "LocalAgency", "years": 1}
+    ]
+  },
+  {
+    "id": "cand-005",
+    "name": "Camille Rousseau",
+    "current_title": "Senior Backend Engineer",
+    "skills": ["Node.js", "TypeScript", "PostgreSQL", "Kafka", "Redis"],
+    "years_experience": 5,
+    "location": "Lyon, France",
+    "remote_ok": true,
+    "bio": "Node/TS expert specialized in event-driven architectures. Built real-time logistics platform.",
+    "availability": "1 month",
+    "expected_salary_eur": 62000,
+    "previous_roles": [
+      {"title": "Backend Engineer", "company": "LogiTech", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-006",
+    "name": "Julien Petit",
+    "current_title": "Backend Developer",
+    "skills": ["Node.js", "TypeScript", "MongoDB", "Express"],
+    "years_experience": 3,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Mid-level Node developer, MongoDB-heavy stack. Strong product mindset.",
+    "availability": "2 months",
+    "expected_salary_eur": 50000,
+    "previous_roles": [
+      {"title": "Junior Developer", "company": "WebStudio", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-007",
+    "name": "Sophie Klein",
+    "current_title": "Senior Backend Engineer",
+    "skills": ["Node.js", "TypeScript", "PostgreSQL", "GraphQL", "Kubernetes"],
+    "years_experience": 6,
+    "location": "Berlin, Germany",
+    "remote_ok": true,
+    "bio": "Senior Node engineer with strong GraphQL and K8s background. EU work permit.",
+    "availability": "1 month",
+    "expected_salary_eur": 72000,
+    "previous_roles": [
+      {"title": "Backend Engineer", "company": "BerlinTech", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-008",
+    "name": "James Wilson",
+    "current_title": "Senior Java Engineer",
+    "skills": ["Java", "Spring Boot", "PostgreSQL", "AWS", "Kafka"],
+    "years_experience": 8,
+    "location": "London, UK",
+    "remote_ok": true,
+    "bio": "Java/Spring backend lead. Built microservices platform handling 100k req/s.",
+    "availability": "3 months",
+    "expected_salary_eur": 85000,
+    "previous_roles": [
+      {"title": "Java Engineer", "company": "BankCo", "years": 5}
+    ]
+  },
+  {
+    "id": "cand-009",
+    "name": "Élodie Garnier",
+    "current_title": "Java Backend Developer",
+    "skills": ["Java", "Spring", "MySQL", "Maven"],
+    "years_experience": 4,
+    "location": "Paris, France",
+    "remote_ok": false,
+    "bio": "Java/Spring developer at large enterprise. Looking to move to scale-up environment.",
+    "availability": "2 months",
+    "expected_salary_eur": 55000,
+    "previous_roles": [
+      {"title": "Java Developer", "company": "EnterpriseCo", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-010",
+    "name": "Stefan Müller",
+    "current_title": "Senior Kotlin Backend Engineer",
+    "skills": ["Kotlin", "Spring Boot", "PostgreSQL", "AWS", "Docker"],
+    "years_experience": 6,
+    "location": "Berlin, Germany",
+    "remote_ok": true,
+    "bio": "Kotlin backend specialist. Migrated multiple Java services to Kotlin in production.",
+    "availability": "1 month",
+    "expected_salary_eur": 75000,
+    "previous_roles": [
+      {"title": "Backend Engineer", "company": "DeliveryDE", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-011",
+    "name": "Ahmed Benali",
+    "current_title": "Senior Go Engineer",
+    "skills": ["Go", "PostgreSQL", "gRPC", "Kubernetes", "Docker"],
+    "years_experience": 7,
+    "location": "Amsterdam, Netherlands",
+    "remote_ok": true,
+    "bio": "Go backend engineer with deep distributed systems experience. Built service mesh from scratch.",
+    "availability": "3 months",
+    "expected_salary_eur": 80000,
+    "previous_roles": [
+      {"title": "Backend Engineer", "company": "InfraCo", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-012",
+    "name": "Pierre Lambert",
+    "current_title": "Go Backend Developer",
+    "skills": ["Go", "PostgreSQL", "Redis", "Docker"],
+    "years_experience": 4,
+    "location": "Remote (France)",
+    "remote_ok": true,
+    "bio": "Mid-level Go developer focused on high-performance APIs.",
+    "availability": "1 month",
+    "expected_salary_eur": 58000,
+    "previous_roles": [
+      {"title": "Junior Backend", "company": "CloudFR", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-013",
+    "name": "Nathalie Faure",
+    "current_title": "Senior Frontend Engineer",
+    "skills": ["React", "TypeScript", "Next.js", "Tailwind", "tRPC"],
+    "years_experience": 5,
+    "location": "Remote (France)",
+    "remote_ok": true,
+    "bio": "Senior React/Next.js engineer with strong UX sensibility. Built analytics dashboards from scratch.",
+    "availability": "1 month",
+    "expected_salary_eur": 70000,
+    "previous_roles": [
+      {"title": "Frontend Engineer", "company": "DataDash", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-014",
+    "name": "Olivier Mercier",
+    "current_title": "Senior Frontend Engineer",
+    "skills": ["React", "TypeScript", "Next.js", "Storybook", "Jest"],
+    "years_experience": 6,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Senior React engineer specializing in design systems and testing infrastructure.",
+    "availability": "2 months",
+    "expected_salary_eur": 75000,
+    "previous_roles": [
+      {"title": "Frontend Engineer", "company": "DSAgency", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-015",
+    "name": "Carlos Ramírez",
+    "current_title": "Frontend Developer",
+    "skills": ["React", "TypeScript", "Redux", "Sass"],
+    "years_experience": 3,
+    "location": "Madrid, Spain",
+    "remote_ok": true,
+    "bio": "Mid-level React developer with strong CSS skills.",
+    "availability": "immediate",
+    "expected_salary_eur": 48000,
+    "previous_roles": [
+      {"title": "Frontend Developer", "company": "MadridDigital", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-016",
+    "name": "Emma Taylor",
+    "current_title": "Senior Frontend Engineer",
+    "skills": ["React", "TypeScript", "Webpack", "Redux", "Jest"],
+    "years_experience": 7,
+    "location": "London, UK",
+    "remote_ok": true,
+    "bio": "Senior React engineer with strong tooling background. No Next.js experience but Webpack expert.",
+    "availability": "3 months",
+    "expected_salary_eur": 78000,
+    "previous_roles": [
+      {"title": "Frontend Engineer", "company": "AdTechUK", "years": 5}
+    ]
+  },
+  {
+    "id": "cand-017",
+    "name": "Léa Moreau",
+    "current_title": "Junior Frontend Developer",
+    "skills": ["React", "JavaScript", "CSS"],
+    "years_experience": 2,
+    "location": "Lyon, France",
+    "remote_ok": false,
+    "bio": "Self-taught React developer, 2 years professional experience. Eager to grow.",
+    "availability": "immediate",
+    "expected_salary_eur": 40000,
+    "previous_roles": [
+      {"title": "Junior Frontend", "company": "AgencyLyon", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-018",
+    "name": "Klaus Weber",
+    "current_title": "Senior Vue Engineer",
+    "skills": ["Vue", "TypeScript", "Nuxt", "Pinia", "Vite"],
+    "years_experience": 6,
+    "location": "Berlin, Germany",
+    "remote_ok": true,
+    "bio": "Senior Vue/Nuxt engineer. Active OSS contributor in the Vue ecosystem.",
+    "availability": "1 month",
+    "expected_salary_eur": 72000,
+    "previous_roles": [
+      {"title": "Frontend Engineer", "company": "VueStartup", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-019",
+    "name": "Aurélie Blanc",
+    "current_title": "Vue Developer",
+    "skills": ["Vue", "JavaScript", "Vuex", "Element UI"],
+    "years_experience": 4,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Mid-level Vue 2 and Vue 3 developer with B2B SaaS background.",
+    "availability": "2 months",
+    "expected_salary_eur": 55000,
+    "previous_roles": [
+      {"title": "Frontend Developer", "company": "B2BSaaS", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-020",
+    "name": "Nicolas Vidal",
+    "current_title": "Senior Frontend Engineer",
+    "skills": ["Vue", "Nuxt", "TypeScript", "GraphQL"],
+    "years_experience": 5,
+    "location": "Remote (France)",
+    "remote_ok": true,
+    "bio": "Senior Nuxt engineer focused on SSR and performance.",
+    "availability": "1 month",
+    "expected_salary_eur": 68000,
+    "previous_roles": [
+      {"title": "Frontend Engineer", "company": "NuxtCo", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-021",
+    "name": "Marco Rossi",
+    "current_title": "Senior Angular Engineer",
+    "skills": ["Angular", "TypeScript", "RxJS", "NgRx"],
+    "years_experience": 7,
+    "location": "Milan, Italy",
+    "remote_ok": true,
+    "bio": "Senior Angular engineer with strong reactive programming background.",
+    "availability": "3 months",
+    "expected_salary_eur": 70000,
+    "previous_roles": [
+      {"title": "Angular Engineer", "company": "ItaliaTech", "years": 5}
+    ]
+  },
+  {
+    "id": "cand-022",
+    "name": "Hugo Roux",
+    "current_title": "Angular Developer",
+    "skills": ["Angular", "TypeScript", "RxJS"],
+    "years_experience": 4,
+    "location": "Paris, France",
+    "remote_ok": false,
+    "bio": "Mid-level Angular developer in enterprise environment.",
+    "availability": "2 months",
+    "expected_salary_eur": 52000,
+    "previous_roles": [
+      {"title": "Angular Developer", "company": "InsuranceFR", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-023",
+    "name": "Charlotte Lefèvre",
+    "current_title": "Senior Full-Stack Engineer",
+    "skills": ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "AWS"],
+    "years_experience": 6,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Senior full-stack engineer, Python+React. Built B2B SaaS from 0 to 1M ARR.",
+    "availability": "1 month",
+    "expected_salary_eur": 78000,
+    "previous_roles": [
+      {"title": "Full-Stack Engineer", "company": "SaaSCo", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-024",
+    "name": "Daniel O'Brien",
+    "current_title": "Staff Engineer",
+    "skills": ["TypeScript", "Node.js", "React", "PostgreSQL", "GraphQL", "Kubernetes"],
+    "years_experience": 9,
+    "location": "Remote (Worldwide, Ireland)",
+    "remote_ok": true,
+    "bio": "Staff engineer with 9 years across full-stack TS. Led platform team at remote-first scale-up.",
+    "availability": "2 months",
+    "expected_salary_eur": 90000,
+    "previous_roles": [
+      {"title": "Senior Engineer", "company": "RemoteCo", "years": 5},
+      {"title": "Engineer", "company": "DubsTech", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-025",
+    "name": "Inès Cohen",
+    "current_title": "Full-Stack Developer",
+    "skills": ["Node.js", "Vue", "TypeScript", "PostgreSQL"],
+    "years_experience": 4,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Mid-level full-stack engineer in Vue + Node. Strong product instincts.",
+    "availability": "1 month",
+    "expected_salary_eur": 58000,
+    "previous_roles": [
+      {"title": "Full-Stack Developer", "company": "ParisSaaS", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-026",
+    "name": "Florent Chevalier",
+    "current_title": "Senior Full-Stack Engineer",
+    "skills": ["Python", "Django", "Vue", "PostgreSQL", "Docker"],
+    "years_experience": 7,
+    "location": "Toulouse, France",
+    "remote_ok": true,
+    "bio": "Senior full-stack engineer Python+Vue. Comfortable across the stack.",
+    "availability": "3 months",
+    "expected_salary_eur": 72000,
+    "previous_roles": [
+      {"title": "Full-Stack", "company": "ToulouseTech", "years": 5}
+    ]
+  },
+  {
+    "id": "cand-027",
+    "name": "Oliver Hughes",
+    "current_title": "Senior Full-Stack Engineer",
+    "skills": ["Java", "Spring", "Angular", "PostgreSQL", "AWS"],
+    "years_experience": 8,
+    "location": "London, UK",
+    "remote_ok": true,
+    "bio": "Senior full-stack engineer Java+Angular with enterprise SaaS background.",
+    "availability": "2 months",
+    "expected_salary_eur": 85000,
+    "previous_roles": [
+      {"title": "Full-Stack Engineer", "company": "EnterpriseUK", "years": 5}
+    ]
+  },
+  {
+    "id": "cand-028",
+    "name": "Manon Gauthier",
+    "current_title": "Full-Stack Developer",
+    "skills": ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL"],
+    "years_experience": 4,
+    "location": "Bordeaux, France",
+    "remote_ok": true,
+    "bio": "Mid-level full-stack engineer Python+React. Strong testing culture.",
+    "availability": "1 month",
+    "expected_salary_eur": 55000,
+    "previous_roles": [
+      {"title": "Full-Stack Developer", "company": "BordeauxStart", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-029",
+    "name": "Vincent Aubert",
+    "current_title": "Principal Engineer",
+    "skills": ["TypeScript", "Node.js", "React", "PostgreSQL", "GraphQL", "AWS", "Terraform"],
+    "years_experience": 12,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Principal engineer with 12 years across full-stack. Looking for staff/principal role only.",
+    "availability": "3 months",
+    "expected_salary_eur": 110000,
+    "previous_roles": [
+      {"title": "Staff Engineer", "company": "BigCo", "years": 5},
+      {"title": "Senior Engineer", "company": "ScaleUpFR", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-030",
+    "name": "Yasmine Adel",
+    "current_title": "Junior Full-Stack Developer",
+    "skills": ["Python", "Flask", "React", "JavaScript"],
+    "years_experience": 2,
+    "location": "Lyon, France",
+    "remote_ok": false,
+    "bio": "Junior full-stack developer, recently moved from agency to product team.",
+    "availability": "immediate",
+    "expected_salary_eur": 42000,
+    "previous_roles": [
+      {"title": "Junior Developer", "company": "LyonAgency", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-031",
+    "name": "Sebastian Hartmann",
+    "current_title": "Senior Machine Learning Engineer",
+    "skills": ["Python", "PyTorch", "MLOps", "Kubeflow", "AWS SageMaker"],
+    "years_experience": 5,
+    "location": "Berlin, Germany",
+    "remote_ok": false,
+    "bio": "Senior ML engineer with PyTorch and production MLOps experience.",
+    "availability": "1 month",
+    "expected_salary_eur": 85000,
+    "previous_roles": [
+      {"title": "ML Engineer", "company": "DeepBerlin", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-032",
+    "name": "Sarah Gold",
+    "current_title": "Machine Learning Engineer",
+    "skills": ["Python", "TensorFlow", "Keras", "Kubernetes"],
+    "years_experience": 4,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "ML engineer specialized in TensorFlow. Production deployments at scale.",
+    "availability": "2 months",
+    "expected_salary_eur": 70000,
+    "previous_roles": [
+      {"title": "ML Engineer", "company": "MLParis", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-033",
+    "name": "Theo Maréchal",
+    "current_title": "LLM / AI Engineer",
+    "skills": ["Python", "PyTorch", "LangChain", "Transformers", "vLLM"],
+    "years_experience": 4,
+    "location": "Remote (France)",
+    "remote_ok": true,
+    "bio": "Specialized in LLM applications and fine-tuning. Open-source contributor.",
+    "availability": "1 month",
+    "expected_salary_eur": 75000,
+    "previous_roles": [
+      {"title": "AI Engineer", "company": "AIStart", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-034",
+    "name": "Lukas Becker",
+    "current_title": "Senior Data Engineer",
+    "skills": ["Python", "Spark", "Airflow", "Snowflake", "dbt"],
+    "years_experience": 6,
+    "location": "Berlin, Germany",
+    "remote_ok": true,
+    "bio": "Senior data engineer with deep Spark and modern data stack experience.",
+    "availability": "2 months",
+    "expected_salary_eur": 80000,
+    "previous_roles": [
+      {"title": "Data Engineer", "company": "DataDE", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-035",
+    "name": "Romain Carpentier",
+    "current_title": "Data Engineer",
+    "skills": ["Python", "Airflow", "PostgreSQL", "BigQuery"],
+    "years_experience": 3,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Mid-level data engineer with focus on ELT pipelines.",
+    "availability": "1 month",
+    "expected_salary_eur": 55000,
+    "previous_roles": [
+      {"title": "Data Engineer", "company": "ParisData", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-036",
+    "name": "Julien Roussel",
+    "current_title": "Senior Machine Learning Engineer",
+    "skills": ["Python", "PyTorch", "MLOps", "Ray", "AWS"],
+    "years_experience": 5,
+    "location": "Paris, France",
+    "remote_ok": false,
+    "bio": "Senior ML engineer, perfect skills match but Paris-only (won't relocate to Berlin).",
+    "availability": "2 months",
+    "expected_salary_eur": 80000,
+    "previous_roles": [
+      {"title": "ML Engineer", "company": "ParisAI", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-037",
+    "name": "Pavel Novak",
+    "current_title": "Senior DevOps Engineer",
+    "skills": ["Kubernetes", "Terraform", "AWS", "Prometheus", "Argo CD"],
+    "years_experience": 6,
+    "location": "Remote (Czech Republic)",
+    "remote_ok": true,
+    "bio": "Senior DevOps with multi-region K8s experience. Strong observability mindset.",
+    "availability": "1 month",
+    "expected_salary_eur": 75000,
+    "previous_roles": [
+      {"title": "DevOps Engineer", "company": "CloudCZ", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-038",
+    "name": "Maxime Fournier",
+    "current_title": "Senior Platform Engineer",
+    "skills": ["Kubernetes", "Terraform", "AWS", "Go", "Grafana"],
+    "years_experience": 7,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Senior platform engineer with Go tooling background. Built internal developer platform.",
+    "availability": "3 months",
+    "expected_salary_eur": 82000,
+    "previous_roles": [
+      {"title": "DevOps Engineer", "company": "ParisCloud", "years": 5}
+    ]
+  },
+  {
+    "id": "cand-039",
+    "name": "Léa Bonnet",
+    "current_title": "DevOps Engineer",
+    "skills": ["Kubernetes", "Docker", "AWS", "Jenkins", "Bash"],
+    "years_experience": 4,
+    "location": "Lyon, France",
+    "remote_ok": true,
+    "bio": "Mid-level DevOps engineer transitioning toward SRE practices.",
+    "availability": "2 months",
+    "expected_salary_eur": 60000,
+    "previous_roles": [
+      {"title": "DevOps Engineer", "company": "LyonCloud", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-040",
+    "name": "Diogo Silva",
+    "current_title": "Senior Site Reliability Engineer",
+    "skills": ["Kubernetes", "Terraform", "GCP", "Prometheus", "Python"],
+    "years_experience": 8,
+    "location": "Lisbon, Portugal",
+    "remote_ok": true,
+    "bio": "Senior SRE with GCP focus. Built incident response process from scratch.",
+    "availability": "1 month",
+    "expected_salary_eur": 78000,
+    "previous_roles": [
+      {"title": "SRE", "company": "LisbonTech", "years": 5}
+    ]
+  },
+  {
+    "id": "cand-041",
+    "name": "Benjamin Caron",
+    "current_title": "DevOps Engineer",
+    "skills": ["Kubernetes", "Helm", "AWS", "GitLab CI"],
+    "years_experience": 3,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Mid-level DevOps engineer with strong CI/CD focus.",
+    "availability": "1 month",
+    "expected_salary_eur": 52000,
+    "previous_roles": [
+      {"title": "Junior DevOps", "company": "DigitalParis", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-042",
+    "name": "Alexandre Girard",
+    "current_title": "Senior iOS Engineer",
+    "skills": ["Swift", "SwiftUI", "iOS", "Combine", "Core Data"],
+    "years_experience": 6,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Senior iOS engineer with SwiftUI focus. Shipped consumer apps with 500k+ DAU.",
+    "availability": "1 month",
+    "expected_salary_eur": 72000,
+    "previous_roles": [
+      {"title": "iOS Engineer", "company": "AppParis", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-043",
+    "name": "Liam Carter",
+    "current_title": "iOS Developer",
+    "skills": ["Swift", "UIKit", "iOS"],
+    "years_experience": 4,
+    "location": "London, UK",
+    "remote_ok": true,
+    "bio": "Mid-level iOS dev, strong UIKit background, transitioning to SwiftUI.",
+    "availability": "2 months",
+    "expected_salary_eur": 60000,
+    "previous_roles": [
+      {"title": "iOS Developer", "company": "MobileUK", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-044",
+    "name": "Sofia López",
+    "current_title": "Senior iOS Engineer",
+    "skills": ["Swift", "SwiftUI", "iOS", "Fastlane", "Combine"],
+    "years_experience": 7,
+    "location": "Madrid, Spain",
+    "remote_ok": true,
+    "bio": "Senior iOS engineer with deep release engineering and Fastlane expertise.",
+    "availability": "3 months",
+    "expected_salary_eur": 75000,
+    "previous_roles": [
+      {"title": "iOS Engineer", "company": "MobilesES", "years": 5}
+    ]
+  },
+  {
+    "id": "cand-045",
+    "name": "Paul Mercier",
+    "current_title": "Senior Android Engineer",
+    "skills": ["Kotlin", "Android", "Jetpack Compose", "Coroutines"],
+    "years_experience": 6,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Senior Android engineer with Compose and modern toolchain expertise.",
+    "availability": "2 months",
+    "expected_salary_eur": 70000,
+    "previous_roles": [
+      {"title": "Android Engineer", "company": "AndroidParis", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-046",
+    "name": "Mateo Romano",
+    "current_title": "Senior React Native Engineer",
+    "skills": ["React Native", "TypeScript", "iOS", "Android"],
+    "years_experience": 5,
+    "location": "Remote (Italy)",
+    "remote_ok": true,
+    "bio": "Senior React Native engineer with native bridge experience on both platforms.",
+    "availability": "1 month",
+    "expected_salary_eur": 68000,
+    "previous_roles": [
+      {"title": "Mobile Engineer", "company": "MobileIT", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-047",
+    "name": "Clémence Renard",
+    "current_title": "Senior Product Designer",
+    "skills": ["Figma", "Product Design", "User Research", "Design Systems", "Prototyping"],
+    "years_experience": 5,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "bio": "Senior product designer with B2B SaaS focus. Built design system used across 12 products.",
+    "availability": "1 month",
+    "expected_salary_eur": 68000,
+    "previous_roles": [
+      {"title": "Product Designer", "company": "SaaSDesign", "years": 3}
+    ]
+  },
+  {
+    "id": "cand-048",
+    "name": "Tristan Boucher",
+    "current_title": "Product Designer",
+    "skills": ["Figma", "Product Design", "User Research"],
+    "years_experience": 3,
+    "location": "Lyon, France",
+    "remote_ok": true,
+    "bio": "Mid-level product designer with strong research-led approach.",
+    "availability": "2 months",
+    "expected_salary_eur": 50000,
+    "previous_roles": [
+      {"title": "UX Designer", "company": "LyonUX", "years": 2}
+    ]
+  },
+  {
+    "id": "cand-049",
+    "name": "Helena Schwarz",
+    "current_title": "Senior UX/UI Designer",
+    "skills": ["Figma", "UX Design", "UI Design", "Prototyping", "Webflow"],
+    "years_experience": 6,
+    "location": "Remote (Austria)",
+    "remote_ok": true,
+    "bio": "Senior UX/UI designer with strong Webflow skills for marketing sites.",
+    "availability": "3 months",
+    "expected_salary_eur": 72000,
+    "previous_roles": [
+      {"title": "UI Designer", "company": "ViennaCo", "years": 4}
+    ]
+  },
+  {
+    "id": "cand-050",
+    "name": "Anja Vogel",
+    "current_title": "UX Designer",
+    "skills": ["Figma", "UX Design", "User Research"],
+    "years_experience": 4,
+    "location": "Berlin, Germany",
+    "remote_ok": true,
+    "bio": "Mid-level UX designer with research-heavy approach in fintech.",
+    "availability": "1 month",
+    "expected_salary_eur": 58000,
+    "previous_roles": [
+      {"title": "UX Designer", "company": "FintechDE", "years": 3}
+    ]
+  }
+]

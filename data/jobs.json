@@ -1,0 +1,122 @@
+[
+  {
+    "id": "job-001",
+    "title": "Senior Backend Engineer (Python)",
+    "description": "We're hiring a Senior Backend Engineer to lead the design of our payment infrastructure. You'll work with a team of 4 engineers, own the API roadmap, and partner with product. Strong Python required.",
+    "required_skills": ["Python", "Django", "PostgreSQL"],
+    "nice_to_have_skills": ["AWS", "Docker", "Stripe API"],
+    "min_years_experience": 5,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "salary_range_eur": {"min": 60000, "max": 80000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-002",
+    "title": "Mid-level Backend Engineer (Node.js)",
+    "description": "Join a team of 6 building a high-throughput logistics platform. You'll own services in TypeScript/Node, design event-driven flows, and contribute to our Kafka pipelines. Mentoring opportunities available.",
+    "required_skills": ["Node.js", "TypeScript", "PostgreSQL"],
+    "nice_to_have_skills": ["Kafka", "Redis", "Kubernetes"],
+    "min_years_experience": 3,
+    "location": "Lyon, France",
+    "remote_ok": true,
+    "salary_range_eur": {"min": 50000, "max": 70000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-003",
+    "title": "Senior Frontend Engineer (React)",
+    "description": "Build the next generation of our analytics dashboard. You'll own the React/Next.js codebase, drive performance optimization, and collaborate closely with our designers. Remote-friendly across EU timezones.",
+    "required_skills": ["React", "TypeScript", "Next.js"],
+    "nice_to_have_skills": ["Tailwind", "tRPC", "Storybook"],
+    "min_years_experience": 5,
+    "location": "Remote (EU)",
+    "remote_ok": true,
+    "salary_range_eur": {"min": 65000, "max": 85000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-004",
+    "title": "Senior Full-Stack Engineer",
+    "description": "End-to-end ownership of features across our product. Backend in Python (FastAPI), frontend in React. You'll work directly with the CTO on architecture decisions for our Series A scale-up.",
+    "required_skills": ["Python", "FastAPI", "React", "TypeScript"],
+    "nice_to_have_skills": ["GraphQL", "AWS", "Terraform"],
+    "min_years_experience": 6,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "salary_range_eur": {"min": 70000, "max": 90000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-005",
+    "title": "Machine Learning Engineer",
+    "description": "Help us build the ML platform behind our personalization engine. You'll design training pipelines, deploy models to production, and own metrics. Strong Python and PyTorch required.",
+    "required_skills": ["Python", "PyTorch", "MLOps"],
+    "nice_to_have_skills": ["Ray", "Kubeflow", "AWS SageMaker"],
+    "min_years_experience": 4,
+    "location": "Berlin, Germany",
+    "remote_ok": false,
+    "salary_range_eur": {"min": 70000, "max": 95000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-006",
+    "title": "DevOps / Site Reliability Engineer",
+    "description": "Drive reliability of our multi-region Kubernetes platform. Own incident response, design observability, automate everything. Remote-only role across EU timezones.",
+    "required_skills": ["Kubernetes", "Terraform", "AWS"],
+    "nice_to_have_skills": ["Prometheus", "Grafana", "Argo CD"],
+    "min_years_experience": 4,
+    "location": "Remote (EU)",
+    "remote_ok": true,
+    "salary_range_eur": {"min": 65000, "max": 85000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-007",
+    "title": "Senior iOS Engineer",
+    "description": "Own our flagship iOS app (1M+ MAU). Swift/SwiftUI codebase, push for testing culture, mentor 2 mid-level engineers. App Store featured product.",
+    "required_skills": ["Swift", "SwiftUI", "iOS"],
+    "nice_to_have_skills": ["Combine", "Core Data", "Fastlane"],
+    "min_years_experience": 5,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "salary_range_eur": {"min": 60000, "max": 80000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-008",
+    "title": "Product Designer",
+    "description": "Design product experiences for our B2B SaaS. From research to prototyping to delivery. You'll partner with PMs and engineering leads. Figma is your home.",
+    "required_skills": ["Figma", "Product Design", "User Research"],
+    "nice_to_have_skills": ["Design Systems", "Prototyping", "Webflow"],
+    "min_years_experience": 4,
+    "location": "Paris, France",
+    "remote_ok": true,
+    "salary_range_eur": {"min": 55000, "max": 75000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-009",
+    "title": "Staff Full-Stack Engineer (Remote)",
+    "description": "Lead architecture for our developer platform. Full ownership: TypeScript backend, React frontend, infrastructure. Reports to VP Eng. Remote-first company, no office requirement.",
+    "required_skills": ["TypeScript", "Node.js", "React", "PostgreSQL"],
+    "nice_to_have_skills": ["GraphQL", "Kubernetes", "AWS"],
+    "min_years_experience": 8,
+    "location": "Remote (Worldwide)",
+    "remote_ok": true,
+    "salary_range_eur": {"min": 75000, "max": 95000},
+    "contract_type": "CDI"
+  },
+  {
+    "id": "job-010",
+    "title": "Junior Backend Engineer (Python)",
+    "description": "Join our growing team as a Junior Backend Engineer. You'll learn from senior engineers, contribute to our Django monolith, and grow into a mid-level role within 18 months. Onsite role with mentoring focus.",
+    "required_skills": ["Python", "Django"],
+    "nice_to_have_skills": ["PostgreSQL", "Git", "REST APIs"],
+    "min_years_experience": 1,
+    "location": "Bordeaux, France",
+    "remote_ok": false,
+    "salary_range_eur": {"min": 35000, "max": 45000},
+    "contract_type": "CDI"
+  }
+]

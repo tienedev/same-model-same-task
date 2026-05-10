@@ -1,0 +1,43 @@
+[project]
+name = "same-model-same-task"
+version = "0.1.0"
+description = "Cross-language benchmark of agent frameworks (Python + TypeScript) with same model + task + tools"
+authors = [{ name = "Etienne Brun" }]
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    # All adapters route to Gemini via Google's OpenAI-compat endpoint
+    # (https://generativelanguage.googleapis.com/v1beta/openai/) using a
+    # single SDK family. Single env var: GEMINI_API_KEY.
+    "openai>=1.50.0",            # baseline + judge (direct), pulled transitively too
+    "click>=8.1.0",
+    "pydantic>=2.0.0",
+    # framework adapters
+    "langgraph>=1.1.10",
+    "langchain-openai>=1.2.0",   # ChatOpenAI with custom base_url
+    "crewai>=1.14.0",            # litellm with openai/<model> + custom api_base
+    "pydantic-ai>=1.91.0",       # OpenAIChatModel + OpenAIProvider with custom base_url
+    "google-adk>=1.32.0",        # via LiteLlm wrapper (openai/<model> + api_base)
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]
+
+# Non-package project: we don't ship anything; we use sys.path manipulation
+# in scripts/harness/frameworks. uv installs the dependencies only.
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "RET"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "scripts"]
+python_files = ["test_*.py"]
