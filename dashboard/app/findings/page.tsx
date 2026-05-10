@@ -6,6 +6,13 @@ import { QualityPerDollarChart } from "@/components/findings/quality-per-dollar-
 import { TokenBreakdownChart } from "@/components/findings/token-breakdown-chart";
 import { summary } from "@/lib/stats";
 
+function formatJobList(ids: string[]): string {
+  if (ids.length === 0) return "no jobs";
+  if (ids.length === 1) return `job ${ids[0]}`;
+  if (ids.length === 2) return `jobs ${ids[0]} and ${ids[1]}`;
+  return `jobs ${ids.slice(0, -1).join(", ")}, and ${ids[ids.length - 1]}`;
+}
+
 export const metadata: Metadata = {
   title: "Findings",
   description:
@@ -49,6 +56,12 @@ export default function FindingsPage() {
   const p95Worst = [...summary.latency_distribution].sort(
     (a, b) => b.p95 - a.p95,
   )[0];
+
+  const baselinePythonFlakes = summary.per_job_success
+    .filter((j) => j.framework === "baseline-python" && j.success_rate < 1.0)
+    .map((j) => j.job_id.replace("job-", ""))
+    .sort();
+  const baselinePythonFlakesText = formatJobList(baselinePythonFlakes);
 
   return (
     <main className="container mx-auto max-w-3xl px-4 pb-16">
@@ -222,7 +235,7 @@ export default function FindingsPage() {
                 remote-related keywords) defeats its lean context handling.
               </li>
               <li>
-                <strong>Baseline-python flakes on jobs 002, 003, 005, 006</strong>
+                <strong>Baseline-python flakes on {baselinePythonFlakesText}</strong>
                 {" "}— without framework discipline, the manual loop hits its
                 step ceiling on tasks that demand more exploration.
               </li>
