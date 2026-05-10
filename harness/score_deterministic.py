@@ -1,7 +1,7 @@
 """Augment a results JSON with a deterministic_score block per valid run.
 
 Mirrors harness/judge.py in shape but makes zero API calls — pure functions
-over score_match() output. Idempotent: re-running on the same file is a no-op.
+over score_match() output. Idempotent: produces byte-identical output on re-runs (pure functions, no in-place mutation).
 
 Usage:
     python harness/score_deterministic.py results/headline/baseline-python.json

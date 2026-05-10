@@ -35,7 +35,7 @@ The leaderboard is anchored on **NDCG@3** (Normalized Discounted Cumulative Gain
 - **1** — strong skills with 2+ soft concerns, *or* mid-range skills (34-66%) with no dealbreaker.
 - **0** — any hard dealbreaker, or `skill_match_pct < 34`.
 
-NDCG@3 then evaluates how well the agent's top-3 prioritizes the highest-`rel` candidates with a log₂ position discount. Hit@1 is `True` when the agent's #1 has `rel ≥ 2`. The mapping is *opinionated, not ground truth*: a "skills-first lex" or "strict 80%" rubric would yield different gold rankings on edge candidates. The rubric lives in one place — `_rel_from_breakdown()` in `harness/gold_ranking.py` — so disagreement is visible.
+NDCG@3 then evaluates how well the agent's top-3 prioritizes the highest-`rel` candidates with a log₂ position discount: `DCG = Σ rel_i / log₂(i + 1)` for `i = 1..3`, normalized by the ideal DCG (the gold's own top-3). NDCG = 1.0 means the agent matched the gold exactly; 0 means it picked 3 irrelevant candidates. Hit@1 is `True` when the agent's #1 has `rel ≥ 2`. The mapping is *opinionated, not ground truth*: a "skills-first lex" or "strict 80%" rubric would yield different gold rankings on edge candidates. The rubric lives in one place — `_rel_from_breakdown()` in `harness/gold_ranking.py` — so disagreement is visible.
 
 The previous `/20` LLM-judge score is preserved in the JSON for historical comparison but no longer surfaced: Gemini judging Gemini exhibits documented self-preference bias (see Caveats § 2 below).
 
@@ -87,10 +87,10 @@ for fw in baseline-python baseline-typescript langgraph crewai pydantic-ai googl
   python harness/run_bench.py --framework "$fw" --all-jobs --trials 3 --out "results/headline/$fw.json"
 done
 
-# 6. Aggregate + LLM-as-judge
-python scripts/summarize.py --input results/headline
-python harness/judge.py results/headline/*.json   # judges valid runs only
-python scripts/summarize.py --input results/headline   # re-aggregate with judge scores
+# 6. Score (deterministic NDCG@3 + Hit@1), judge (qualitative), aggregate
+python harness/score_deterministic.py results/headline/*.json   # deterministic scoring, no API calls
+python harness/judge.py results/headline/*.json                  # LLM-judge on valid runs
+python scripts/summarize.py --input results/headline             # aggregate + refresh README
 ```
 
 ## Caveats

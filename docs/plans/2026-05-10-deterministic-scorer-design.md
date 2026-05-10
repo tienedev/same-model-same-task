@@ -23,7 +23,7 @@ After this change the judge keeps a single role — qualitative prose evaluation
 | D3 | Aggregation model | **Graded relevance 0-3 per (job, candidate)** — NOT a weighted scalar |
 | D4 | Tie handling within a gold tier | None needed — NDCG@3 treats equal-relevance items as interchangeable |
 | D5 | Judge re-scope | Drop `relevance`, `score_coherence`, `format`. Keep `justification_quality` /5. |
-| D6 | Backward compat | `judge.py` still runnable. Old `/20` summed score kept in JSON as `legacy_judge_total_20`, shown in summaries with footnote citing self-bias literature. |
+| D6 | Backward compat | `judge.py` still runnable. Old `/20` summed score kept in JSON as `mean_judge_score`, shown in summaries with footnote citing self-bias literature. |
 | D7 | Debug metrics in JSON | Precision@3 and Recall@3 stored per run for cross-check; not surfaced in headline. |
 | D8 | Cache location | `results/.gold-cache/` (gitignored) — keyed by `(job_id, candidate_id, score_match_output_hash)`. |
 
@@ -135,7 +135,7 @@ No API calls. Idempotent. Re-runnable. `--out` flag to redirect output.
   - New headline columns: **NDCG@3** (3 decimals), **Hit@1** (% with 1 decimal).
   - Demote `Judge /20` → side column labelled `JustifQ /5` (mean of new `justification_quality` only) with a footnote linking to the README caveat.
   - Keep `Valid`, `p50`, `p95`, tokens, tools, cost.
-- Preserve `legacy_judge_total_20` in `summary.json` for any consumer that depended on it; do not display.
+- Preserve `mean_judge_score` in `summary.json` for any consumer that depended on it; do not display.
 
 **`harness/judge.py`**
 
@@ -218,7 +218,7 @@ scripts/summarize.py:
 ## 9. Acceptance
 
 - `python harness/score_deterministic.py results/headline/baseline-python.json` augments each valid run with a `deterministic_score` block matching § 6.
-- `python scripts/summarize.py --input results/headline` produces a leaderboard whose headline columns are **NDCG@3** and **Hit@1**; `JustifQ /5` is a side column with footnote; `legacy_judge_total_20` is preserved in JSON only.
+- `python scripts/summarize.py --input results/headline` produces a leaderboard whose headline columns are **NDCG@3** and **Hit@1**; `JustifQ /5` is a side column with footnote; `mean_judge_score` is preserved in JSON only.
 - `pytest scripts/test_deterministic_scorer.py` passes, including the stability and idempotence tests.
 - README "Scoring" section exists and is short enough (<100 words main para) that a reader can replicate the rubric by hand.
 - `docs/plans/task-spec.md` § 7 is updated to point here.
