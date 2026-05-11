@@ -109,7 +109,12 @@ export function Leaderboard({ stats }: { stats: FrameworkStats[] }) {
             <TableHead className="text-right">Tokens (in / out)</TableHead>
             <TableHead className="text-right">Tools</TableHead>
             <TableHead className="text-right">Cost / run</TableHead>
-            <TableHead className="text-right" title="Justification quality axis only (1–5). Judge /20 retired as primary signal — see README Scoring section.">JustifQ /5</TableHead>
+            <TableHead
+              className="text-right"
+              title="How actionable the agent's justification text is, rated 1–5 by the LLM-judge: 1 = vague boilerplate ('good match, relevant experience'), 5 = specific, evidence-cited reasoning ('100% skill match on Python+Django, 6y exp exceeds the 5y minimum')."
+            >
+              JustifQ /5
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

@@ -6,7 +6,7 @@ A cross-language benchmark of 8 LLM agent frameworks (5 Python + 3 TypeScript) c
 
 ## Leaderboard
 
-> **Reading the columns.** **NDCG@3** is the ranking-quality score from information-retrieval (range 0–1, higher = better): how well the agent's top-3 picks line up with the rule-based gold top-3. **Hit@1** = % of trials where the agent's #1 pick is at least "Relevant" against the rule-based rubric. **JustifQ /5** is the LLM-judge's `justification_quality` axis only (1–5), kept as a soft prose-readability signal — see Caveats § 2 on why the old `/20` rubric was demoted. Full methodology in **§ Scoring** below.
+> **Reading the columns.** **NDCG@3** is the ranking-quality score from information-retrieval (range 0–1, higher = better): how well the agent's top-3 picks line up with the rule-based gold top-3. **Hit@1** = % of trials where the agent's #1 pick is at least "Relevant" against the rule-based rubric. **JustifQ /5** rates how actionable the agent's justification text is — 1 = vague boilerplate ("good match, relevant experience"), 5 = specific and evidence-cited ("100% skill match on Python+Django, 6y exp exceeds the 5y minimum, salary in range"). It measures the prose the agent writes, not whether it picked the right candidates. Full methodology in **§ Scoring** below.
 
 <!-- LEADERBOARD-START -->
 | Framework | Valid | NDCG@3 | Hit@1 | JustifQ /5 [^j] | p50 (s) | p95 (s) | Mean tokens (in/out) | Mean tools | Cost / run (USD) |
@@ -20,7 +20,7 @@ A cross-language benchmark of 8 LLM agent frameworks (5 Python + 3 TypeScript) c
 | baseline-typescript | 29/30 | 0.589 | 69.0% | 3.00 | 20.5 | 32.7 | 5897 / 495 | 9.2 | $0.0177 |
 | baseline-python | 23/30 | 0.570 | 65.2% | 3.09 | 22.1 | 54.8 | 7027 / 515 | 9.7 | $0.0202 |
 
-[^j]: `JustifQ /5` is the LLM-judge's `justification_quality` axis only — the prose readability signal. The previous `/20` sum is preserved in the JSON but no longer surfaced: Gemini judging Gemini exhibits documented self-bias (up to 50% rubric-flip on objective rubrics; Panickssery et al. NeurIPS 2024). Use NDCG@3 + Hit@1 for ranking decisions.
+[^j]: `JustifQ /5` rates how actionable the agent's justification text is (1 = vague boilerplate, 5 = specific and evidence-cited). It measures the prose the agent writes, not whether it picked the right candidates — that's NDCG@3's job. The Gemini-judge has documented self-bias on rubric-style scoring (up to 50% rubric-flip on objective axes; Panickssery et al. NeurIPS 2024), so we keep it only for this one prose-quality axis.
 
 <!-- LEADERBOARD-END -->
 
@@ -124,7 +124,7 @@ This bug doesn't surface in single-framework quickstarts. It only emerges in a c
 
 ### 2. Other limits
 
-- **Gemini judges Gemini.** Self-preference bias is documented at *up to 50% rubric-flip* on objective rubrics (Panickssery et al. NeurIPS 2024; arXiv 2410.21819), traced to perplexity-based familiarity — a mechanical effect, not fixable by prompt tweaks. This is why the leaderboard now anchors on the deterministic NDCG@3 + Hit@1 scorer (see § Scoring) and the LLM-judge is reduced to `justification_quality` (a prose-readability signal that's harder to evaluate deterministically).
+- **Gemini judges Gemini.** Self-preference bias is documented at *up to 50% rubric-flip* on objective rubrics (Panickssery et al. NeurIPS 2024; arXiv 2410.21819), traced to perplexity-based familiarity — a mechanical effect, not fixable by prompt tweaks. The leaderboard now anchors on the deterministic NDCG@3 + Hit@1 scorer (see § Scoring) for ranking correctness, and uses the LLM-judge only for `justification_quality` — rating how actionable the agent's justification prose is for a recruiter (1 = vague, 5 = specific evidence-cited reasoning). That's the one axis where a language model genuinely judges better than a rule.
 - **Per-framework metric availability gaps.** CrewAI's `tool_calls` was historically zero before we wired its `step_callback`. If a future SDK upgrade changes its callback shape, that field reverts to `null` rather than silently misleading.
 - **Sample size.** The headline run is 30 trials per framework. Confidence intervals on `p95` get noisy below 100 trials — interpret single-decimal differences with caution.
 

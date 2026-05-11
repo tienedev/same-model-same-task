@@ -299,11 +299,12 @@ def _build_leaderboard_md(stats: list[dict[str, Any]]) -> str:
         )
     rows.append("")
     rows.append(
-        "[^j]: `JustifQ /5` is the LLM-judge's `justification_quality` axis only — "
-        "the prose readability signal. The previous `/20` sum is preserved in the JSON "
-        "but no longer surfaced: Gemini judging Gemini exhibits documented self-bias "
-        "(up to 50% rubric-flip on objective rubrics; Panickssery et al. NeurIPS 2024). "
-        "Use NDCG@3 + Hit@1 for ranking decisions."
+        "[^j]: `JustifQ /5` rates how actionable the agent's justification text is "
+        "(1 = vague boilerplate, 5 = specific and evidence-cited). It measures the "
+        "prose the agent writes, not whether it picked the right candidates — that's "
+        "NDCG@3's job. The Gemini-judge has documented self-bias on rubric-style "
+        "scoring (up to 50% rubric-flip on objective axes; Panickssery et al. NeurIPS "
+        "2024), so we keep it only for this one prose-quality axis."
     )
     return "\n".join(rows) + "\n"
 

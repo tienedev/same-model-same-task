@@ -9,4 +9,4 @@
 | baseline-typescript | 29/30 | 0.589 | 69.0% | 3.00 | 20.5 | 32.7 | 5897 / 495 | 9.2 | $0.0177 |
 | baseline-python | 23/30 | 0.570 | 65.2% | 3.09 | 22.1 | 54.8 | 7027 / 515 | 9.7 | $0.0202 |
 
-[^j]: `JustifQ /5` is the LLM-judge's `justification_quality` axis only — the prose readability signal. The previous `/20` sum is preserved in the JSON but no longer surfaced: Gemini judging Gemini exhibits documented self-bias (up to 50% rubric-flip on objective rubrics; Panickssery et al. NeurIPS 2024). Use NDCG@3 + Hit@1 for ranking decisions.
+[^j]: `JustifQ /5` rates how actionable the agent's justification text is (1 = vague boilerplate, 5 = specific and evidence-cited). It measures the prose the agent writes, not whether it picked the right candidates — that's NDCG@3's job. The Gemini-judge has documented self-bias on rubric-style scoring (up to 50% rubric-flip on objective axes; Panickssery et al. NeurIPS 2024), so we keep it only for this one prose-quality axis.
